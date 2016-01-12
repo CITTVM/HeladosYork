@@ -1,18 +1,14 @@
-﻿// Smooth Follow from Standard Assets
-// Converted to C# because I fucking hate UnityScript and it's inexistant C# interoperability
-// If you have C# code and you want to edit SmoothFollow's vars ingame, use this instead.
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class SmoothFollow : MonoBehaviour {
+public class SeguirCamara : MonoBehaviour {
 
-	// The target we are following
+	// El player al cual seguimos
 	public Transform target;
-	// The distance in the x-z plane to the target
+	// La distancia plana  x-z del player
 	public float distance = 10.0f;
-	// the height we want the camera to be above the target
+	// altura que queremos que la camara vea al player
 	public float height = 5.0f;
-	// How much we 
 	public float heightDamping = 2.0f;
 	public float rotationDamping = 3.0f;
 
