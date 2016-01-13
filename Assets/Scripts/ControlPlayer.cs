@@ -10,6 +10,15 @@ public class ControlPlayer : MonoBehaviour
 	public float Salto=25;
 	float moveVelocity;
 
+
+
+	//takendamage
+	float takenDamage = 0.2f;
+
+
+
+
+
 	//Variables enSuelo
 
 	public bool enSuelo = true;
@@ -20,7 +29,6 @@ public class ControlPlayer : MonoBehaviour
 	void FixedUpdate(){
 		enSuelo = Physics2D.OverlapCircle (comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
 	}
-
 
 	void Update ()
 	{
@@ -56,5 +64,21 @@ public class ControlPlayer : MonoBehaviour
 	void OnTriggerExit2D()
 	{
 		enSuelo = false;
+	}
+
+
+	public IEnumerator TakenDamage(){
+		GetComponent<Renderer>().enabled = false;
+		yield return new WaitForSeconds(takenDamage);
+		GetComponent<Renderer>().enabled = true;
+		yield return new WaitForSeconds(takenDamage);
+		GetComponent<Renderer>().enabled = false;
+		yield return new WaitForSeconds(takenDamage);
+		GetComponent<Renderer>().enabled = true;
+		yield return new WaitForSeconds(takenDamage);
+		GetComponent<Renderer>().enabled = false;
+		yield return new WaitForSeconds(takenDamage);
+		GetComponent<Renderer>().enabled = true;
+		yield return new WaitForSeconds(takenDamage);
 	}
 }

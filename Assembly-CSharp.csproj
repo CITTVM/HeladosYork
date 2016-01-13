@@ -45,7 +45,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\ComportamientoEnemigo.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />
+     <Compile Include="Assets\Scripts\Manejo.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
+     <Compile Include="Assets\Scripts\No utilizados\SpawnEnemigo.cs" />
      <Compile Include="Assets\Scripts\Scripts no utilizados\Player.cs" />
      <Compile Include="Assets\Scripts\Scripts no utilizados\SeguirCamHorizontal.cs" />
      <Compile Include="Assets\Scripts\SeguirCamara.cs" />
