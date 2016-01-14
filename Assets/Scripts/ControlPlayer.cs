@@ -23,7 +23,7 @@ public class ControlPlayer : MonoBehaviour
 
 	public bool enSuelo = true;
 	public Transform comprobadorSuelo;
-	float comprobadorRadio = 1.5f;
+	float comprobadorRadio = 0.7f;
 	public LayerMask mascaraSuelo;
 
 	void FixedUpdate(){
@@ -56,15 +56,7 @@ public class ControlPlayer : MonoBehaviour
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveVelocity, GetComponent<Rigidbody2D> ().velocity.y);
 
 	}
-	//Chequear ensuelo
-	void OnTriggerEnter2D()
-	{
-		enSuelo = true;
-	}
-	void OnTriggerExit2D()
-	{
-		enSuelo = false;
-	}
+
 
 
 	public IEnumerator TakenDamage(){
