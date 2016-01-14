@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\ControlEnemy.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\ScriptCamara.cs" />
      <Compile Include="Assets\Scripts\SeguirCamara.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

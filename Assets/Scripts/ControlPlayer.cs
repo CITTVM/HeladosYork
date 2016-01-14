@@ -5,45 +5,36 @@ public class ControlPlayer : MonoBehaviour
 {
 
 	//Variables Movimiento
-
-  	public float Velocidad=15;
+	public float Velocidad=15;
 	public float Salto=25;
 	float moveVelocity;
 
 
-
-	//takendamage
-	float takenDamage = 0.2f;
-
-
-
-
+	//daño que tomara el player
+	float takenDamage= 0.2f;
 
 	//Variables enSuelo
-
 	public bool enSuelo = true;
 	public Transform comprobadorSuelo;
-	float comprobadorRadio = 1.5f;
+	public float comprobadorRadio = 1.0f;
 	public LayerMask mascaraSuelo;
 
+
 	void FixedUpdate(){
-		enSuelo = Physics2D.OverlapCircle (comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
+		enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
 	}
+
 
 	void Update ()
 	{
 		//Salto
 		if (enSuelo && Input.GetKeyDown (KeyCode.Space))
-		{
-
-
-				GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, Salto);
-
-		}
-
-		moveVelocity = 0;
+		    {
+		GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, Salto);
+			}
 
 		//Movimiento derecha izquierda
+		moveVelocity = 0;
 		if (Input.GetKey (KeyCode.LeftArrow))
 		{
 			moveVelocity = -Velocidad;
@@ -56,17 +47,9 @@ public class ControlPlayer : MonoBehaviour
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveVelocity, GetComponent<Rigidbody2D> ().velocity.y);
 
 	}
-	//Chequear ensuelo
-	void OnTriggerEnter2D()
-	{
-		enSuelo = true;
-	}
-	void OnTriggerExit2D()
-	{
-		enSuelo = false;
-	}
 
 
+	// para el DAÑO AL JUGADOR
 	public IEnumerator TakenDamage(){
 		GetComponent<Renderer>().enabled = false;
 		yield return new WaitForSeconds(takenDamage);
@@ -81,4 +64,8 @@ public class ControlPlayer : MonoBehaviour
 		GetComponent<Renderer>().enabled = true;
 		yield return new WaitForSeconds(takenDamage);
 	}
+
+
+
+
 }
