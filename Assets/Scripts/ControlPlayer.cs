@@ -10,13 +10,13 @@ public class ControlPlayer : MonoBehaviour
 	float moveVelocity;
 
 
-<<<<<<< HEAD
+
 	//daño que tomara el player
 	float takenDamage= 0.2f;
-=======
+
 
 	//takendamage
-	float takenDamage = 0.2f;
+	//float takenDamage = 0.2f;
 
 	#region Barra de Hidratacion
 	public RectTransform HidroTransform;
@@ -26,7 +26,7 @@ public class ControlPlayer : MonoBehaviour
 	private int hidratacionActual;
 	public int MaxHidratacion;
 	#endregion
->>>>>>> origin/master
+
 
 	//Variables enSuelo
 	public bool enSuelo = true;
@@ -34,8 +34,8 @@ public class ControlPlayer : MonoBehaviour
 	public float comprobadorRadio = 1.0f;
 	public LayerMask mascaraSuelo;
 
-<<<<<<< HEAD
-=======
+
+
 	void Start(){
 		#region Barra de Hidratacion
 		almacenadaY = HidroTransform.position.y;
@@ -44,7 +44,7 @@ public class ControlPlayer : MonoBehaviour
 		setHidratacionActual(MaxHidratacion);
 		#endregion
 	}
->>>>>>> origin/master
+
 
 	void FixedUpdate(){
 		enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
@@ -79,8 +79,7 @@ public class ControlPlayer : MonoBehaviour
 		}
 		#endregion
 	}
-<<<<<<< HEAD
-=======
+
 
 	//Chequear ensuelo
 	void OnTriggerEnter2D()
@@ -91,7 +90,7 @@ public class ControlPlayer : MonoBehaviour
 	{
 		enSuelo = false;
 	}
->>>>>>> origin/master
+
 
 
 	// para el DAÑO AL JUGADOR
@@ -109,12 +108,12 @@ public class ControlPlayer : MonoBehaviour
 		GetComponent<Renderer>().enabled = true;
 		yield return new WaitForSeconds(takenDamage);
 	}
-<<<<<<< HEAD
 
 
 
 
-=======
+
+
 	#region Barra de Hidratacion	
 	private void ManejoHidratacion(){
 		float ValorXActual = MapeoValores (getHidratacionActual(), 0, MaxHidratacion, minXValue, maxXValue);
@@ -141,5 +140,5 @@ public class ControlPlayer : MonoBehaviour
 		return hidratacionActual;
 	}
 	#endregion
->>>>>>> origin/master
+
 }
