@@ -17,7 +17,7 @@ public class PlayerAtack : MonoBehaviour {
 	
 	}
 
-	void BulletAttack(){
+	public void BulletAttack(){
 
 		Rigidbody2D bPrefab = Instantiate(bulletPrefab,transform.position,Quaternion.identity) as Rigidbody2D;
 		bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 500);
