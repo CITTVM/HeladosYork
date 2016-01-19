@@ -4,10 +4,16 @@ using System.Collections;
 public class ControlPlayer : MonoBehaviour
 {
 
-	//Variables Movimiento
-	public float Velocidad=15;
-	public float Salto=25;
-	float moveVelocity;
+
+
+	public float speed = 15, jumpVelocity = 40;
+	public LayerMask playerMask;
+	public bool canMoveInAir = true;
+	Transform myTrans, tagGround;
+	Rigidbody2D myBody;
+	bool isGrounded = false;
+	float hInput = 0;
+
 
 
 
@@ -28,11 +34,7 @@ public class ControlPlayer : MonoBehaviour
 	#endregion
 
 
-	//Variables enSuelo
-	public bool enSuelo = true;
-	public Transform comprobadorSuelo;
-	public float comprobadorRadio = 1.0f;
-	public LayerMask mascaraSuelo;
+
 
 
 
@@ -43,34 +45,38 @@ public class ControlPlayer : MonoBehaviour
 		minXValue = HidroTransform.position.x - HidroTransform.rect.width;
 		setHidratacionActual(MaxHidratacion);
 		#endregion
+
+		myBody = this.GetComponent<Rigidbody2D>();
+		myTrans = this.GetComponent<Transform>();
+		//myTrans = this.transform;
+		tagGround = GameObject.Find (this.name + "/tag_ground").transform;
+
 	}
 
 
-	void FixedUpdate(){
-		enSuelo = Physics2D.OverlapCircle(comprobadorSuelo.position, comprobadorRadio, mascaraSuelo);
+	void FixedUpdate ()
+	{
+		isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
+
+		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+
+		Move(Input.GetAxisRaw("Horizontal"));
+		if(Input.GetButtonDown("Jump"))
+		Jump();
+		#else
+		Move (hInput);
+		#endif
 	}
+
+
+
+
+
 
 
 	void Update ()
 	{
-		//Salto
-		if (enSuelo && Input.GetKeyDown (KeyCode.Space))
-		    {
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (GetComponent<Rigidbody2D> ().velocity.x, Salto);
-			}
-
-		//Movimiento derecha izquierda
-		moveVelocity = 0;
-		if (Input.GetKey (KeyCode.LeftArrow))
-		{
-			moveVelocity = -Velocidad;
-		}
-		if (Input.GetKey (KeyCode.RightArrow))
-		{
-			moveVelocity = Velocidad;
-		}
-
-		GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveVelocity, GetComponent<Rigidbody2D> ().velocity.y);
+		
 
 		#region Barra de Hidratacion
 		if (hidratacionActual >= 0) {
@@ -80,17 +86,26 @@ public class ControlPlayer : MonoBehaviour
 		#endregion
 	}
 
-
-	//Chequear ensuelo
-	void OnTriggerEnter2D()
+	public void Move(float horizonalInput)
 	{
-		enSuelo = true;
-	}
-	void OnTriggerExit2D()
-	{
-		enSuelo = false;
+		if(!canMoveInAir && !isGrounded)
+			return;
+
+		Vector2 moveVel = myBody.velocity;
+		moveVel.x = horizonalInput * speed;
+		myBody.velocity = moveVel;
 	}
 
+	public void Jump()
+	{
+		if(isGrounded)
+			myBody.velocity += jumpVelocity * Vector2.up;
+	}
+
+	public void StartMoving(float horizonalInput)
+	{
+		hInput = horizonalInput;
+	}
 
 
 	// para el DAÑO AL JUGADOR

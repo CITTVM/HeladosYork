@@ -6,6 +6,9 @@ public class ControlEnemy : MonoBehaviour {
 	//referencia a GameManager
 	public GameManager gameManager;
 
+
+
+
 	//establezco el daño que recibira
 	int damageValue = 1;
 
@@ -53,6 +56,7 @@ public class ControlEnemy : MonoBehaviour {
 		}
 
 		if (!moveRight) {
+			
 
 			GetComponent<Rigidbody2D>().position -= Vector2.right * moveSpeed * Time.deltaTime;
 		}

@@ -19,27 +19,6 @@ C:\Users\IgnacioAlejandro\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngin
 C:\Users\IgnacioAlejandro\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\IgnacioAlejandro\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.dll
 C:\Users\IgnacioAlejandro\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.pdb
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Assembly-CSharp.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Assembly-CSharp.pdb
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEditor.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.Networking.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.UI.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Mono.Cecil.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.SerializationLogic.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.DataContract.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\ICSharpCode.NRefactory.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.UNetWeaver.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.CecilTools.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Mono.Cecil.Pdb.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Mono.Cecil.Mdb.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.xml
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEditor.xml
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.UI.xml
-C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.Networking.xml
-C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
-C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.dll
-C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.pdb
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\Temp\bin\Debug\UnityEditor.dll
@@ -61,3 +40,24 @@ C:\Users\kades\Documents\Projectos Unity\HeladosYork\Temp\bin\Debug\UnityEngine.
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\obj\Debug\Assembly-CSharp.dll
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\obj\Debug\Assembly-CSharp.pdb
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Assembly-CSharp.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Assembly-CSharp.pdb
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEditor.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.Networking.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.UI.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Mono.Cecil.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.SerializationLogic.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.DataContract.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.UNetWeaver.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Unity.CecilTools.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.xml
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEditor.xml
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.UI.xml
+C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.dll
+C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.pdb
