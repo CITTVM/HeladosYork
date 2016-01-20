@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\BulletScript.cs" />
+     <Compile Include="Assets\Scripts\ControlDarVida.cs" />
      <Compile Include="Assets\Scripts\ControlEnemy.cs" />
      <Compile Include="Assets\Scripts\ControlMobile.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />

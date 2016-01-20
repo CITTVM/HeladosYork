@@ -13,6 +13,7 @@ public class ControlEnemy : MonoBehaviour {
 	int damageValue = 1;
 
 
+
 	// GENERAR COLISION
 	// Si colisiona el enemigo (ontrigger porque el enemigo tiene un boxcollider2d con ontrigger activado)
 	// se produce el metodo de que toma daño y el metodo que quita vida
@@ -22,7 +23,7 @@ public class ControlEnemy : MonoBehaviour {
 
 		if(col.gameObject.tag == "Player"){
 			gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
-			gameManager.controlPlayer.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
+            gameManager.controlPlayer.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
 
 		}
 	}

@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
 	//referencia al script del jugador
 	public ControlPlayer controlPlayer;
-	// Use this for initialization
+
 
 	//controlar la textura del player
 	public Texture playerHealthTexture;
@@ -26,20 +26,20 @@ public class GameManager : MonoBehaviour {
 
 
 
-	//para quitar health
+	//para quitar health o agregar health
 	void OnGUI(){
 		for(int h = 0; h < playerHealth; h++) {
 			GUI.DrawTexture(new Rect(screenPositionX + (h * iconSizeX), screenPositionY, iconSizeX, iconSizeY), playerHealthTexture, ScaleMode.ScaleToFit, true, 0);
 		}
 
 	}
-	//metodo del damage 
-	void PlayerDamaged(int damage)
+	//METODO PARA QUITAR VIDAS 
+	void PlayerDamaged(int vida)
 	{
 
 		if (playerHealth > 0) {
 
-			playerHealth -= damage;
+			playerHealth -= vida;
 		}
 
 		if(playerHealth <= 0){
@@ -50,6 +50,7 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+
 	//reinicia la escena
 	void RestartScene(){
 
@@ -59,4 +60,30 @@ public class GameManager : MonoBehaviour {
 
 
 
-}
+
+	//METODO QUE AUMENTA VIDA (como maximo 5)
+
+	void PlayerVida(int vida){
+
+		if (playerHealth < 5) {
+
+			playerHealth += vida;
+		}
+
+
+
+	
+	}
+		
+	}
+
+
+
+
+
+
+
+
+
+
+

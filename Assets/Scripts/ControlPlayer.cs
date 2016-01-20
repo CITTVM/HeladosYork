@@ -156,4 +156,19 @@ public class ControlPlayer : MonoBehaviour
 	}
 	#endregion
 
+
+
+	// DESTRUIR HELADO SI COLISIONA CON EL
+	void OnTriggerEnter2D (Collider2D col)
+	{
+
+		if (col.gameObject.tag == "Helado") {
+
+			Destroy (col.gameObject);
+
+		}
+	}
+
+
+
 }
