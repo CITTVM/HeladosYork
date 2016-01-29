@@ -45,8 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Fit All Screen Size\ResolutionFixer.js" />
-     <None Include="Assets\Fit All Screen Size\ReadMe.txt" />
+     <Compile Include="Assets\Inventory\Scripts\Character.js" />
+     <Compile Include="Assets\Inventory\Scripts\Inventory.js" />
+     <Compile Include="Assets\Inventory\Scripts\InventoryDisplay.js" />
+     <Compile Include="Assets\Inventory\Scripts\Items\EquipmentEffect.js" />
+     <Compile Include="Assets\Inventory\Scripts\Items\FirstPersonPickUp.js" />
+     <Compile Include="Assets\Inventory\Scripts\Items\Item.js" />
+     <Compile Include="Assets\Inventory\Scripts\Items\ItemEffect.js" />
+     <Compile Include="Assets\Inventory\Scripts\Other\ChangeScene.js" />
+     <Compile Include="Assets\Inventory\Scripts\Other\InvAudio.js" />
+     <Compile Include="Assets\Inventory\Scripts\Other\InvPauseGame.js" />
+     <Compile Include="Assets\Inventory\Scripts\Other\WeaponSwitch.js" />
+     <None Include="Assets\Inventory\Credits + C#.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

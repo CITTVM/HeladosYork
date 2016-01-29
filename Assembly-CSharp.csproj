@@ -51,8 +51,17 @@
      <Compile Include="Assets\Scripts\ControlMobile.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\Inventario\Inventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\JugadorBD.cs" />
+     <Compile Include="Assets\Scripts\Inventario\NombresObjetosBD.cs" />
+     <Compile Include="Assets\Scripts\Inventario\UIInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventory.cs" />
+     <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
      <Compile Include="Assets\Scripts\PlayerAtack.cs" />
      <Compile Include="Assets\Scripts\ScriptCamara.cs" />
+     <Compile Include="Assets\Scripts\Weapon.cs" />
+     <Compile Include="Assets\Scripts\switchWeapons.cs" />
+     <Compile Include="Assets\Scripts\weaponScript.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
