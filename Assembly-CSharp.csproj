@@ -47,6 +47,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Ataque\BulletScript.cs" />
      <Compile Include="Assets\Scripts\Ataque\PlayerAtack.cs" />
+     <Compile Include="Assets\Scripts\Ataque\Weapon.cs" />
      <Compile Include="Assets\Scripts\Ataque\weaponScript.cs" />
      <Compile Include="Assets\Scripts\ControlDarVida.cs" />
      <Compile Include="Assets\Scripts\ControlEnemy.cs" />
@@ -55,12 +56,12 @@
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Inventario 1\CambiarArma.cs" />
      <Compile Include="Assets\Scripts\Inventario 1\Inventory.cs" />
-     <Compile Include="Assets\Scripts\Inventario 1\Weapon.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\AñadirObjetoporColision.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\BDInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\EquipoInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\JugadorInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\ObjetoInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario 2\PuntosInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\SlotInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario 2\marcador.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />

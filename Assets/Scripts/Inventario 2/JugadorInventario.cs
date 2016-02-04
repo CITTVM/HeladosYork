@@ -8,6 +8,7 @@ public class JugadorInventario : MonoBehaviour {
 	public ObjetoInventario[] Objetos = new ObjetoInventario[3];
     public int[] Cantidad = new int[3];
     public ObjetoInventario[] Equipo = new ObjetoInventario[2];
+	public PuntosInventario[] PuntoEquipo = new PuntosInventario[2];
 //
 	public void AgregarObjeto(int ID)
 	{
@@ -77,7 +78,7 @@ public class JugadorInventario : MonoBehaviour {
 			else if (Objetos[slot].Tipo == Tipo.equipo)
 			{
 
-				if (Objetos[slot].Extra1 == "Cabeza") 
+				if (Objetos[slot].Extra1 == "Helado 1") 
 //				
 				{
 
@@ -103,11 +104,35 @@ public class JugadorInventario : MonoBehaviour {
 						ObjetoInventario.Asignar(Equipo[0], Objetos[slot]);
 						Eliminar(slot);
 					}
+
+					PuntoEquipo[0].Refrescar();
 				}
-				if (Objetos[slot].Extra1 == "Cabeza")
+				if (Objetos[slot].Extra1 == "Helado 2")
 				{
 				
-					print ("Cabeza");
+					if (Equipo[1].Objeto != null) 
+
+					{
+
+						int aux = 0;
+						for (int i = 0; i < DB.Database.ToArray().Length; i++)
+
+						{
+
+							if (DB.Database[i].Objeto == Equipo[1].Objeto)
+								aux = i;
+						}
+
+						ObjetoInventario.Asignar(Equipo[1], Objetos[slot]);
+						Eliminar(slot);
+						AgregarObjeto(aux);
+					}
+					else
+					{
+						ObjetoInventario.Asignar(Equipo[1], Objetos[slot]);
+						Eliminar(slot);
+					}
+					PuntoEquipo[1].Refrescar();
 				}
 
 				
