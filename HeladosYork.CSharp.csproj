@@ -57,31 +57,33 @@
     <Reference Include="UnityEngine.Networking">
       <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.Networking">
-      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\Ataque\BulletScript.cs" />
+    <Compile Include="Assets\Scripts\Ataque\PlayerAtack.cs" />
+    <Compile Include="Assets\Scripts\Ataque\Weapon.cs" />
+    <Compile Include="Assets\Scripts\Ataque\weaponScript.cs" />
     <Compile Include="Assets\Scripts\ControlDarVida.cs" />
     <Compile Include="Assets\Scripts\ControlEnemy.cs" />
     <Compile Include="Assets\Scripts\ControlMobile.cs" />
     <Compile Include="Assets\Scripts\ControlPlayer.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Inventario 1\CambiarArma.cs" />
+    <Compile Include="Assets\Scripts\Inventario 1\Inventory.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\AñadirObjetoporColision.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\BDInventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\EquipoInventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\JugadorInventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\ObjetoInventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\PuntosInventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\SlotInventario.cs" />
+    <Compile Include="Assets\Scripts\Inventario 2\marcador.cs" />
     <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
-    <Compile Include="Assets\Scripts\PlayerAtack.cs" />
+    <Compile Include="Assets\Scripts\MusicManager.cs" />
+    <Compile Include="Assets\Scripts\OptionsManager.cs" />
     <Compile Include="Assets\Scripts\ScriptCamara.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
