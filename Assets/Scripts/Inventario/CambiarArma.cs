@@ -20,12 +20,13 @@ public class CambiarArma: MonoBehaviour {
 	void Update () {
 
 		if (Input.GetKeyDown(KeyCode.Q)) {
-
+			//metodo para cambiar armas
 			switchWeaponsPlease ();
 		}
 
 
 	if (Input.GetKeyDown (KeyCode.F))
+			//metodo para atacar
 				BulletAttack ();
 
 		
@@ -33,7 +34,7 @@ public class CambiarArma: MonoBehaviour {
 
 	}
 
-
+	//metodo para atacar
 	public void BulletAttack(){
 
 		if (weapon01.activeSelf) {
@@ -57,7 +58,7 @@ public class CambiarArma: MonoBehaviour {
 		
 		}
 	}
-
+	//metodo para cambiar armas
 		void switchWeaponsPlease(){
 
 			if (weapon01.activeSelf){

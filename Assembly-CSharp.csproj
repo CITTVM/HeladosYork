@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Ataque\BulletScript.cs" />
-     <Compile Include="Assets\Scripts\Ataque\PlayerAtack.cs" />
      <Compile Include="Assets\Scripts\Ataque\Weapon.cs" />
      <Compile Include="Assets\Scripts\Ataque\weaponScript.cs" />
      <Compile Include="Assets\Scripts\ControlDarVida.cs" />
@@ -54,17 +53,18 @@
      <Compile Include="Assets\Scripts\ControlMobile.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Inventario 1\CambiarArma.cs" />
-     <Compile Include="Assets\Scripts\Inventario 1\Inventory.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\AñadirObjetoporColision.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\BDInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\EquipoInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\JugadorInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\ObjetoInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\PuntosInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\SlotInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario 2\marcador.cs" />
+     <Compile Include="Assets\Scripts\Inventario\AñadirObjetoporColision.cs" />
+     <Compile Include="Assets\Scripts\Inventario\BDInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\CambiarArma.cs" />
+     <Compile Include="Assets\Scripts\Inventario\EquipoInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\JugadorInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\ObjetoInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\PuntosInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\SlotInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\marcador.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
+     <Compile Include="Assets\Scripts\MusicManager.cs" />
+     <Compile Include="Assets\Scripts\OptionsManager.cs" />
      <Compile Include="Assets\Scripts\ScriptCamara.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
