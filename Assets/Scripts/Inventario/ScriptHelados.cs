@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CambiarArma: MonoBehaviour {
+public class ScriptHelados : MonoBehaviour {
+
 
 	public GameObject weapon01;
 	public GameObject weapon02;
@@ -10,37 +11,36 @@ public class CambiarArma: MonoBehaviour {
 
 
 	void Start(){
-		
+
 		//weapon03.SetActive(false);
 		weapon02.SetActive(true);
 		weapon01.SetActive(true);
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 
 		if (Input.GetKeyDown(KeyCode.Q)) {
-			//metodo para cambiar armas
-			switchWeaponsPlease ();
+
+			switchWeaponsPlease();
 		}
 
 
-	if (Input.GetKeyDown (KeyCode.F))
-			//metodo para atacar
-				BulletAttack ();
+		if (Input.GetKeyDown (KeyCode.F))
+			BulletAttack();
 
-		
+
 
 
 	}
 
-	//metodo para atacar
+
 	public void BulletAttack(){
 
 		if (weapon01.activeSelf) {
-			
+
 			Rigidbody2D bPrefab = Instantiate (bullet1, transform.position, Quaternion.identity) as Rigidbody2D;
-			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 500);
+			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 900);
 
 
 
@@ -48,31 +48,31 @@ public class CambiarArma: MonoBehaviour {
 
 			//weapon03.SetActive(true);
 		} else {
-			
+
 			Rigidbody2D bPrefab = Instantiate (bullet2, transform.position, Quaternion.identity) as Rigidbody2D;
-			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 500);
+			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 900);
 
 
 
 
-		
+
 		}
 	}
-	//metodo para cambiar armas
-		void switchWeaponsPlease(){
 
-			if (weapon01.activeSelf){
-				weapon01.SetActive(false);
-				weapon02.SetActive(true);
+	void switchWeaponsPlease(){
 
-
+		if (weapon01.activeSelf){
+			weapon01.SetActive(false);
+			weapon02.SetActive(true);
 
 
 
-			    //weapon03.SetActive(true);
-			}
-			else{
-				weapon01.SetActive(true);
+
+
+			//weapon03.SetActive(true);
+		}
+		else{
+			weapon01.SetActive(true);
 			weapon02.SetActive(false);
 			//weapon02.SetActive(true);
 
@@ -88,6 +88,8 @@ public class CambiarArma: MonoBehaviour {
 
 
 
-	
+
 	}
+
+
 }

@@ -40,7 +40,6 @@ C:\Users\kades\Documents\Projectos Unity\HeladosYork\Temp\bin\Debug\UnityEngine.
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\obj\Debug\Assembly-CSharp.dll
 C:\Users\kades\Documents\Projectos Unity\HeladosYork\obj\Debug\Assembly-CSharp.pdb
-C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Assembly-CSharp.dll
 C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\Assembly-CSharp.pdb
 C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEditor.dll
@@ -59,5 +58,6 @@ C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.xml
 C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEditor.xml
 C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.UI.xml
 C:\Users\Dals\Documents\GitHub\HeladosYork\Temp\bin\Debug\UnityEngine.Networking.xml
+C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.dll
 C:\Users\Dals\Documents\GitHub\HeladosYork\obj\Debug\Assembly-CSharp.pdb

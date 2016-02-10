@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AñadirObjetoporColision : MonoBehaviour {
+public class Añadir1 : MonoBehaviour {
 
 
 	//referencia al script jugadorinventario
@@ -9,7 +9,7 @@ public class AñadirObjetoporColision : MonoBehaviour {
 
 
 	public GameObject bullet1;
-	public GameObject bullet2;
+
 	//id de los helados en la bd
 	public int ID;
 
@@ -17,19 +17,21 @@ public class AñadirObjetoporColision : MonoBehaviour {
 	void Start(){
 
 		//weapon03.SetActive(false);
-		//bullet1.SetActive(false);
-		//bullet2.SetActive(false);
+
+		bullet1.SetActive(false);
+		//bullet2.gameObject.SetActive(false);
+
 	}
 
 
 	// cuando colisione el personaje con 1 helado este se agrega al inventario y se activa el arma
-
+//
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag ("Player")) {
 			jugadorInventario.AgregarObjeto (ID);
 			Destroy (gameObject);
-			bullet2.SetActive (true);
+			bullet1.SetActive(true);
 
 
 
@@ -40,12 +42,16 @@ public class AñadirObjetoporColision : MonoBehaviour {
 		}
 
 
-	void Ontr (Collider2D other)
-	{
-		if (other.CompareTag ("Player")) {
-			jugadorInventario.AgregarObjeto (ID);
-			Destroy (gameObject);
-			bullet2.SetActive (true);
+//	void OnTriggerEnter2D(Collider2D col){
+//
+//		if(col.gameObject.tag == "Player"){
+//			jugadorInventario.AgregarObjeto (ID);
+//			Destroy (gameObject);
+//			bullet1.SetActive(true);
+//			bullet2.SetActive(true);
+//
+//
+//			}
 
 
 
@@ -53,10 +59,7 @@ public class AñadirObjetoporColision : MonoBehaviour {
 
 
 
-	}
-
-
-	}
+	
 
 
 

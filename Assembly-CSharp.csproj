@@ -53,13 +53,14 @@
      <Compile Include="Assets\Scripts\ControlMobile.cs" />
      <Compile Include="Assets\Scripts\ControlPlayer.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Inventario\AñadirObjetoporColision.cs" />
+     <Compile Include="Assets\Scripts\Inventario\AñadirObjetos\Añadir1.cs" />
+     <Compile Include="Assets\Scripts\Inventario\AñadirObjetos\Añadir2.cs" />
      <Compile Include="Assets\Scripts\Inventario\BDInventario.cs" />
-     <Compile Include="Assets\Scripts\Inventario\CambiarArma.cs" />
      <Compile Include="Assets\Scripts\Inventario\EquipoInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario\JugadorInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario\ObjetoInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario\PuntosInventario.cs" />
+     <Compile Include="Assets\Scripts\Inventario\ScriptHelados.cs" />
      <Compile Include="Assets\Scripts\Inventario\SlotInventario.cs" />
      <Compile Include="Assets\Scripts\Inventario\marcador.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
