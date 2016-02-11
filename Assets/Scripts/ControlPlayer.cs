@@ -9,10 +9,15 @@ public class ControlPlayer : MonoBehaviour
 	public float speed = 15, jumpVelocity = 40;
 	public LayerMask playerMask;
 	public bool canMoveInAir = true;
-	Transform myTrans, tagGround;
+	//Transform myTrans, tagGround;
 	Rigidbody2D myBody;
-	bool isGrounded = false;
+	public bool isGrounded = false;
 	float hInput = 0;
+
+
+	public Transform compSuelo;
+	float comprobadorRadio =0.03f;
+	public LayerMask mascaraSuelo;
 
 
 
@@ -47,16 +52,18 @@ public class ControlPlayer : MonoBehaviour
 		#endregion
 
 		myBody = this.GetComponent<Rigidbody2D>();
-		myTrans = this.GetComponent<Transform>();
+		//myTrans = this.GetComponent<Transform>();
 		//myTrans = this.transform;
-		tagGround = GameObject.Find (this.name + "/tag_ground").transform;
+		//tagGround = GameObject.Find (this.name + "tag_ground").transform;
 
 	}
 
 
 	void FixedUpdate ()
 	{
-		isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
+		//isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
+		isGrounded = Physics2D.OverlapCircle (compSuelo.position, comprobadorRadio, mascaraSuelo);
+
 
 		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 

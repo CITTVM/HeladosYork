@@ -16,7 +16,7 @@ public class BDInventario : MonoBehaviour {
 	}
 	void Update()
 	{
-
+		
 		if (Input.GetButtonDown ("Jump"))
 			CanvasInventario.active = !CanvasInventario.active;
 	}
