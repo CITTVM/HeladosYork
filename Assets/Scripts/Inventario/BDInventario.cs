@@ -11,14 +11,14 @@ public class BDInventario : MonoBehaviour {
 	void Start()
 	{
 
-		CanvasInventario.active = false;
+		CanvasInventario.active = true;
 
 	}
 	void Update()
 	{
 		
-		if (Input.GetButtonDown ("Jump"))
-			CanvasInventario.active = !CanvasInventario.active;
+//		if (Input.GetKeyDown (KeyCode.Q))
+//			CanvasInventario.active = !CanvasInventario.active;
 	}
 
 

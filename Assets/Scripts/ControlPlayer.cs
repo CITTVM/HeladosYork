@@ -19,7 +19,10 @@ public class ControlPlayer : MonoBehaviour
 	float comprobadorRadio =0.03f;
 	public LayerMask mascaraSuelo;
 
-
+	public GameObject weapon01;
+	public GameObject weapon02;
+	public Rigidbody2D bullet1;
+	public Rigidbody2D bullet2;
 
 
 	//daño que tomara el player
@@ -73,6 +76,17 @@ public class ControlPlayer : MonoBehaviour
 		#else
 		Move (hInput);
 		#endif
+
+
+
+		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+
+		Move(Input.GetAxisRaw("Horizontal"));
+		if(Input.GetButtonDown("CambiarArma"))
+			cambiarArma();
+		#else
+		Move (hInput);
+		#endif
 	}
 
 
@@ -113,6 +127,39 @@ public class ControlPlayer : MonoBehaviour
 	{
 		hInput = horizonalInput;
 	}
+
+	public void cambiarArma()
+	{
+//		weapon02.SetActive(true);
+//		weapon01.SetActive(true);
+
+
+		if (weapon01.activeSelf){
+			weapon01.SetActive(false);
+			weapon02.SetActive(true);
+
+
+
+
+
+			//weapon03.SetActive(true);
+		}
+		else{
+			weapon01.SetActive(true);
+			weapon02.SetActive(false);
+			//weapon02.SetActive(true);
+
+		}
+	
+	}
+
+
+
+
+
+
+
+
 
 
 	// para el DAÑO AL JUGADOR
