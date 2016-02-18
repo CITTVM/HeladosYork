@@ -39,14 +39,18 @@ public class ControlPlayer : MonoBehaviour
 	private float maxXValue;
 	private int hidratacionActual;
 	public int MaxHidratacion;
-	#endregion
+    #endregion
+
+    #region Sound Effects
+    public AudioSource salto;
+    public AudioSource aterrizar;
+    #endregion
 
 
 
 
 
-
-	void Start(){
+    void Start(){
 		#region Barra de Hidratacion
 		almacenadaY = HidroTransform.position.y;
 		maxXValue = HidroTransform.position.x;
@@ -73,10 +77,10 @@ public class ControlPlayer : MonoBehaviour
 		Move(Input.GetAxisRaw("Horizontal"));
 		if(Input.GetButtonDown("Jump"))
 		Jump();
-		#else
+#else
 		Move (hInput);
-		#endif
-
+#endif
+        
 
 
 		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
@@ -119,8 +123,11 @@ public class ControlPlayer : MonoBehaviour
 
 	public void Jump()
 	{
-		if(isGrounded)
-			myBody.velocity += jumpVelocity * Vector2.up;
+        if (isGrounded)
+        {
+            myBody.velocity += jumpVelocity * Vector2.up;
+            salto.Play();
+        }
 	}
 
 	public void StartMoving(float horizonalInput)
@@ -221,8 +228,13 @@ public class ControlPlayer : MonoBehaviour
 			Destroy (col.gameObject);
 
 		}
-	}
+    }
 
-
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Soil")
+        {
+            aterrizar.Play();
+        }
+    }
 }
