@@ -2,9 +2,12 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ControlPlayer.cs">
     <Files>
-      <File FileName="Assets\Scripts\Inventario\ScriptHelados.cs" Line="20" Column="22" />
-      <File FileName="Assets\Scripts\Inventario\BDInventario.cs" Line="20" Column="5" />
-      <File FileName="Assets\Scripts\ControlPlayer.cs" Line="133" Column="5" />
+      <File FileName="Assets\Scripts\ControlPlayer.cs" Line="110" Column="8" />
+      <File FileName="Assets\Scripts\Inventario\BDInventario.cs" Line="14" Column="3" />
+      <File FileName="Assets\Scripts\Inventario\SlotInventario.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventario\JugadorInventario.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventario\marcador.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Inventario\AtaqueConHelados.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ControlMobile.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>

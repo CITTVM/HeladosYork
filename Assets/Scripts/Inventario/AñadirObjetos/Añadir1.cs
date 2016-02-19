@@ -10,6 +10,9 @@ public class Añadir1 : MonoBehaviour {
 
 	public GameObject bullet1;
 
+
+
+
 	//id de los helados en la bd
 	public int ID;
 
@@ -18,7 +21,8 @@ public class Añadir1 : MonoBehaviour {
 
 		//weapon03.SetActive(false);
 
-		bullet1.SetActive(false);
+
+
 		//bullet2.gameObject.SetActive(false);
 
 	}
@@ -29,9 +33,11 @@ public class Añadir1 : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other)
 	{
 		if (other.CompareTag ("Player")) {
-			jugadorInventario.AgregarObjeto (ID);
-			Destroy (gameObject);
-			bullet1.SetActive(true);
+			jugadorInventario.AgregarObjeto(ID);
+			print ("se agrego el objeto al inventario");
+			Destroy(gameObject);
+
+
 
 
 

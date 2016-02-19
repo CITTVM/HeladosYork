@@ -9,7 +9,7 @@ public class marcador : MonoBehaviour {
 	void Start()
 	{
 
-		ID = 99999;
+		ID = 999999;
 
 	}
 

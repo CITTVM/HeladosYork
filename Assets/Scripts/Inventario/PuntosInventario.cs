@@ -21,7 +21,7 @@ public class PuntosInventario : MonoBehaviour {
 
 			GameObject go = Instantiate(JI.Equipo [ID].Objeto) as GameObject;
 			go.transform.parent = transform;
-			go.transform.localPosition = Vector2.zero;
+			go.transform.localPosition = Vector3.zero;
 		
 		//}
 

@@ -5,10 +5,10 @@ using UnityEngine.UI;
 public class JugadorInventario : MonoBehaviour {
 
 	public BDInventario DB;
-	public ObjetoInventario[] Objetos = new ObjetoInventario[3];
-    public int[] Cantidad = new int[3];
+	public ObjetoInventario[] Objetos = new ObjetoInventario[2];
+    public int[] Cantidad = new int[2];
     public ObjetoInventario[] Equipo = new ObjetoInventario[2];
-	public PuntosInventario[] PuntoEquipo = new PuntosInventario[2];
+	//public PuntosInventario[] PuntoEquipo = new PuntosInventario[2];
 //
 	public void AgregarObjeto(int ID)
 	{
@@ -105,7 +105,7 @@ public class JugadorInventario : MonoBehaviour {
 						Eliminar(slot);
 					}
 
-					PuntoEquipo[0].Refrescar();
+					//PuntoEquipo[0].Refrescar();
 				}
 				if (Objetos[slot].Extra1 == "Helado 2")
 				{
@@ -132,7 +132,7 @@ public class JugadorInventario : MonoBehaviour {
 						ObjetoInventario.Asignar(Equipo[1], Objetos[slot]);
 						Eliminar(slot);
 					}
-					PuntoEquipo[1].Refrescar();
+					//PuntoEquipo[1].Refrescar();
 				}
 
 				

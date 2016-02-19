@@ -16,7 +16,7 @@ public class Añadir2 : MonoBehaviour {
 		//weapon03.SetActive(false);
 
 		//bullet1.gameObject.SetActive(true);
-		bullet2.SetActive(false);
+
 
 	}
 
@@ -27,8 +27,9 @@ public class Añadir2 : MonoBehaviour {
 	{
 		if (other.CompareTag ("Player")) {
 			jugadorInventario.AgregarObjeto (ID);
+			print ("se agrego el objeto al inventario");
 			Destroy (gameObject);
-			bullet2.SetActive (true);
+
 
 
 
