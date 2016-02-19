@@ -261,19 +261,13 @@ CanvasInventario.active = !CanvasInventario.active;
 
 	}
 
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Soil")
+        {
+            aterrizar.Play();
+        }
+    }
 
 }
-	
-//
-//    }
-//
-//    void OnCollisionEnter2D(Collision2D col)
-//    {
-//        if (col.gameObject.tag == "Soil")
-//        {
-//            aterrizar.Play();
-//        }
-//    }
-//}
 
