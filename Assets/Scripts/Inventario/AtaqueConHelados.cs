@@ -34,7 +34,7 @@ public class AtaqueConHelados : MonoBehaviour {
 
 
 		
-		} else {
+		} else if(bullet2.activeSelf){
 
 			GameObject bPrefab = Instantiate (bullet2, transform.position, Quaternion.identity) as GameObject;
 			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 900);

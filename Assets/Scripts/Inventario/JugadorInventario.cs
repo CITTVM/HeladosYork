@@ -12,9 +12,10 @@ public class JugadorInventario : MonoBehaviour {
 //
 	public void AgregarObjeto(int ID)
 	{
-//
+		
 		for (int i = 0; i < Objetos.Length; i++ )
 		{
+			
 
 		   if (Objetos[i].Objeto == null)
 			{
@@ -37,6 +38,9 @@ public class JugadorInventario : MonoBehaviour {
 			}
 		print ("No hay espacios libres");
 		}
+
+
+
 	public void Eliminar(int slot)
 	{
 

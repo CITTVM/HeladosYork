@@ -25,21 +25,11 @@ public class ControlPlayer : MonoBehaviour
 
 	//PARA EL MOVIL
 
-
 	public GameObject bullet1;
 	public GameObject bullet2;
 	public GameObject CanvasInventario;
+    SlotInventario slotInventario;
 	//PARA EL MOVIL
-	public SlotInventario slotInventario;
-
-
-
-
-
-
-
-
-
 
 
 	//daño que tomara el player
@@ -64,10 +54,12 @@ public class ControlPlayer : MonoBehaviour
     #endregion
 
 
-
-
-
     void Start(){
+
+		//armas inactivas al empezar
+		bullet1.SetActive (false);
+		bullet2.SetActive (false);
+	
 		#region Barra de Hidratacion
 		almacenadaY = HidroTransform.position.y;
 		maxXValue = HidroTransform.position.x;
@@ -78,7 +70,9 @@ public class ControlPlayer : MonoBehaviour
 		myBody = this.GetComponent<Rigidbody2D>();
 		//myTrans = this.GetComponent<Transform>();
 		//myTrans = this.transform;
-//tagGround = GameObject.Find (this.name + "tag_ground").transform;
+        //tagGround = GameObject.Find (this.name + "tag_ground").transform;
+
+		// en android el inventario comienza inactivo
 		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 
 		CanvasInventario.active = false;
@@ -104,7 +98,7 @@ public class ControlPlayer : MonoBehaviour
 #endif
         
 
-
+		//LLAMA AL METODO CLICK DE SLOTINVENTARIO
 		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 
 		Move(Input.GetAxisRaw("Horizontal"));
@@ -114,7 +108,7 @@ public class ControlPlayer : MonoBehaviour
 		#else
 		Move (hInput);
 		#endif
-
+		// PARA MOVER EL MARCADOR, SE LLAMA AL MEDOTO DEL SCRIPT SLOTINVENTARIO
 		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 
 		Move(Input.GetAxisRaw("Horizontal"));
@@ -123,6 +117,8 @@ public class ControlPlayer : MonoBehaviour
 		#else
 		Move (hInput);
 		#endif
+
+		// PARA ABRIR EL INVENTARIO
 		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 
 		Move(Input.GetAxisRaw("Horizontal"));
