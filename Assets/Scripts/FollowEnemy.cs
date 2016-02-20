@@ -7,6 +7,13 @@ public class FollowEnemy : MonoBehaviour {
 	public float jumpImpulse;
 
 
+	//referencia a GameManager
+	public GameManager gameManager;
+
+     //establezco el daño que recibira
+	int damageValue = 1;
+
+
 
 	private Transform target;
 	private Rigidbody2D body;
@@ -87,6 +94,15 @@ public class FollowEnemy : MonoBehaviour {
 					this.movement.y = jumpImpulse;
 				//}
 			//}
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D col){
+
+		if(col.gameObject.tag == "Player"){
+			gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
+			gameManager.controlPlayer.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
+
 		}
 	}
 	// =============================
