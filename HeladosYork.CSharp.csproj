@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\ControlEnemy.cs" />
     <Compile Include="Assets\Scripts\ControlMobile.cs" />
     <Compile Include="Assets\Scripts\ControlPlayer.cs" />
+    <Compile Include="Assets\Scripts\FollowEnemy.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\Inventario\AtaqueConHelados.cs" />
     <Compile Include="Assets\Scripts\Inventario\AñadirObjetos\Añadir1.cs" />
