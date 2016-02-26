@@ -51,6 +51,7 @@ public class ControlPlayer : MonoBehaviour
     #region Sound Effects
     public AudioSource salto;
     public AudioSource aterrizar;
+	public AudioSource pisada1;
     #endregion
 
 
@@ -84,6 +85,13 @@ public class ControlPlayer : MonoBehaviour
 
 	void FixedUpdate ()
 	{
+
+
+
+		if (Input.GetButton("Horizontal") ){
+			pisada1.Play ();
+		
+		}
 		//isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
 		isGrounded = Physics2D.OverlapCircle (compSuelo.position, comprobadorRadio, mascaraSuelo);
 
