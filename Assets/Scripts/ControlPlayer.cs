@@ -89,7 +89,13 @@ public class ControlPlayer : MonoBehaviour
 
 
 		if (Input.GetButton("Horizontal") ){
-			pisada1.Play ();
+            if (isGrounded)
+            {
+                if (!pisada1.isPlaying)
+                {
+                    pisada1.Play();
+                }
+            }
 		
 		}
 		//isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
