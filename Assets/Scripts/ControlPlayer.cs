@@ -52,10 +52,13 @@ public class ControlPlayer : MonoBehaviour
     public AudioSource salto;
     public AudioSource aterrizar;
 	public AudioSource pisada1;
+	public AudioSource pisada2;
+
     #endregion
 
 
     void Start(){
+		
 
 		//armas inactivas al empezar
 		bullet1.SetActive (false);
@@ -91,10 +94,12 @@ public class ControlPlayer : MonoBehaviour
 		if (Input.GetButton("Horizontal") ){
             if (isGrounded)
             {
-                if (!pisada1.isPlaying)
-                {
-                    pisada1.Play();
-                }
+				if (!pisada1.isPlaying) {
+					pisada1.Play ();
+
+				} else  {
+					pisada2.Play();
+				}
             }
 		
 		}
