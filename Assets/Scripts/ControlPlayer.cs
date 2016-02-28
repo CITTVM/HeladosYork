@@ -107,41 +107,41 @@ public class ControlPlayer : MonoBehaviour
 		isGrounded = Physics2D.OverlapCircle (compSuelo.position, comprobadorRadio, mascaraSuelo);
 
 
-		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-
-		Move(Input.GetAxisRaw("Horizontal"));
-		if(Input.GetButtonDown("Jump"))
+#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+        Move();
+        //Move(Input.GetAxisRaw("Horizontal"));
+        if (Input.GetButtonDown("Jump"))
 		Jump();
 #else
 		Move (hInput);
 #endif
-        
 
-		//LLAMA AL METODO CLICK DE SLOTINVENTARIO
-		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 
-		Move(Input.GetAxisRaw("Horizontal"));
-		if(Input.GetButtonDown("click"))
+        //LLAMA AL METODO CLICK DE SLOTINVENTARIO
+#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+        Move();
+        //Move(Input.GetAxisRaw("Horizontal"));
+        if (Input.GetButtonDown("click"))
 			slotInventario.click();
-		
-		#else
-		Move (hInput);
-		#endif
-		// PARA MOVER EL MARCADOR, SE LLAMA AL MEDOTO DEL SCRIPT SLOTINVENTARIO
-		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
 
-		Move(Input.GetAxisRaw("Horizontal"));
+#else
+		Move (hInput);
+#endif
+        // PARA MOVER EL MARCADOR, SE LLAMA AL MEDOTO DEL SCRIPT SLOTINVENTARIO
+#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+        Move();
+		//Move(Input.GetAxisRaw("Horizontal"));
 		if(Input.GetButtonDown("marcadore"))
-			slotInventario.marcadore(); 
-		#else
+			slotInventario.marcadore();
+#else
 		Move (hInput);
-		#endif
+#endif
 
-		// PARA ABRIR EL INVENTARIO
-		#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-
-		Move(Input.GetAxisRaw("Horizontal"));
-		if(Input.GetButtonDown("abrirInventario"))
+        // PARA ABRIR EL INVENTARIO
+#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+        Move();
+        //Move(Input.GetAxisRaw("Horizontal"));
+        if (Input.GetButtonDown("abrirInventario"))
 			abrirInventario(); 
 	
 		#else
@@ -171,17 +171,35 @@ public class ControlPlayer : MonoBehaviour
 		#endregion
 	}
 
-	public void Move(float horizonalInput)
-	{
-		if(!canMoveInAir && !isGrounded)
-			return;
+    public void Move()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            if (!canMoveInAir && !isGrounded)
+                return;
+            transform.Translate(Vector2.right * 4f * Time.deltaTime);
+            transform.eulerAngles = new Vector2(0, 0);
+        }
 
-		Vector2 moveVel = myBody.velocity;
-		moveVel.x = horizonalInput * speed;
-		myBody.velocity = moveVel;
-	}
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (!canMoveInAir && !isGrounded)
+                return;
+            transform.Translate(Vector2.right * 4f * Time.deltaTime);
+            transform.eulerAngles = new Vector2(0, 180);
+        }
+    }
+    //public void Move(float horizonalInput)
+    //{
+    //	if(!canMoveInAir && !isGrounded)
+    //		return;
 
-	public void Jump()
+    //	Vector2 moveVel = myBody.velocity;
+    //	moveVel.x = horizonalInput * speed;
+    //	myBody.velocity = moveVel;
+    //}
+
+    public void Jump()
 	{
         if (isGrounded)
         {

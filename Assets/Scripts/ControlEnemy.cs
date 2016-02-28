@@ -44,32 +44,39 @@ public class ControlEnemy : MonoBehaviour {
 		finPos = inicioPos + unitsToMove;
 	}
 
-	void Update () {
+    void Update()
+    {
 
-		if (moveRight){
+        if (moveRight)
+        {
 
-			GetComponent<Rigidbody2D>().position += Vector2.right * moveSpeed * Time.deltaTime;
-		}
+            GetComponent<Rigidbody2D>().position += Vector2.right * moveSpeed * Time.deltaTime;
+            transform.eulerAngles = new Vector2(0, 0);
+        }
 
-		if(GetComponent<Rigidbody2D>().position.x >= finPos){
-			moveRight = false;
+        if (GetComponent<Rigidbody2D>().position.x >= finPos)
+        {
+            moveRight = false;
 
-		}
+        }
 
-		if (!moveRight) {
-			
-
-			GetComponent<Rigidbody2D>().position -= Vector2.right * moveSpeed * Time.deltaTime;
-		}
-
-
-		if(GetComponent<Rigidbody2D>().position.x <= inicioPos){
-
-			moveRight = true;
-		}
+        if (!moveRight)
+        {
 
 
+            GetComponent<Rigidbody2D>().position -= Vector2.right * moveSpeed * Time.deltaTime;
+            transform.eulerAngles = new Vector2(0, 180);
+        }
 
 
-	}
+        if (GetComponent<Rigidbody2D>().position.x <= inicioPos)
+        {
+
+            moveRight = true;
+        }
+
+
+
+
+    }
 }
