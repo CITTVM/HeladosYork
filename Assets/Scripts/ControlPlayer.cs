@@ -97,7 +97,7 @@ public class ControlPlayer : MonoBehaviour
 				if (!pisada1.isPlaying) {
 					pisada1.Play ();
 
-				} else  {
+				} else if(!pisada2.isPlaying)  {
 					pisada2.Play();
 				}
             }
