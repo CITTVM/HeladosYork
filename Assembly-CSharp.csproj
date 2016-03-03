@@ -56,7 +56,6 @@
      <Compile Include="Assets\Scripts\DeadZone.cs" />
      <Compile Include="Assets\Scripts\FollowEnemy.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Inventario\AtaqueConHelados.cs" />
      <Compile Include="Assets\Scripts\Inventario\AñadirObjetos\Añadir1.cs" />
      <Compile Include="Assets\Scripts\Inventario\AñadirObjetos\Añadir2.cs" />
      <Compile Include="Assets\Scripts\Inventario\AñadirObjetos\ColisionConHelados.cs" />
