@@ -4,62 +4,51 @@ using System.Collections;
 public class AtaqueConHelados : MonoBehaviour {
 
 
-	public GameObject bullet1;
-	public GameObject bullet2;
+    //public GameObject bullet1;
+    //public GameObject bullet2;
 
 
 
-	void Start(){
+    //void Start() { }
+
+
+    //// Update is called once per frame
+    //void Update()
+    //{
+
+
+    //    if (Input.GetKeyDown(KeyCode.F))
+    //        BulletAttack();
+
+    //}
+
+
+    //public void BulletAttack()
+    //{
+
+    //    if (bullet1.activeSelf)
+    //    {
+
+    //        GameObject bPrefab = Instantiate(bullet1, transform.position, Quaternion.identity) as GameObject;
+    //        bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 900);
 
 
 
-	}
+    //    }
+    //    else if (bullet2.activeSelf)
+    //    {
 
-	// Update is called once per frame
-	void Update () {
-
-
-		if (Input.GetKeyDown (KeyCode.F))
-			BulletAttack();
-
-	}
-
-
-	public void BulletAttack(){
-
-		if (bullet1.activeSelf) {
-
-			GameObject bPrefab = Instantiate (bullet1, transform.position, Quaternion.identity) as GameObject;
-			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 900);
-
-
-		
-		} else if(bullet2.activeSelf){
-
-			GameObject bPrefab = Instantiate (bullet2, transform.position, Quaternion.identity) as GameObject;
-			bPrefab.GetComponent<Rigidbody2D> ().AddForce (Vector2.right * 900);
-
-
-
-
-
-		}
-	}
+    //        GameObject bPrefab = Instantiate(bullet2, transform.position, Quaternion.identity) as GameObject;
+    //        bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 900);
 
 
 
 
 
+    //    }
+    //}
+}
 
-
-
-
-
-
-
-
-
-	}
 
 
 
