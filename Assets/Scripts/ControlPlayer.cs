@@ -61,8 +61,10 @@ public class ControlPlayer : MonoBehaviour
 
     void Start()
     {
-
-
+        Time.timeScale = 1f;
+        #region Barra de Hidratación
+        //StartCoroutine(DescHidratacion());
+        #endregion
         //armas inactivas al empezar
         bullet1.SetActive(false);
         bullet2.SetActive(false);
@@ -168,15 +170,24 @@ public class ControlPlayer : MonoBehaviour
 
     void Update()
     {
-
-
         #region Barra de Hidratacion
+        StartCoroutine(DescHidratacion());
+        //if (hidratacionActual >= 0)
+        //{
+        //HidratacionActual = (int)(HidratacionActual - (1 * Time.deltaTime));
+        //    setHidratacionActual((int)(getHidratacionActual() - (0.05f * Time.deltaTime)));
+        //}
+        #endregion
+    }
+
+    IEnumerator DescHidratacion()
+    {
+        yield return new WaitForSeconds(3);
         if (hidratacionActual >= 0)
         {
             //HidratacionActual = (int)(HidratacionActual - (1 * Time.deltaTime));
-            setHidratacionActual((int)(getHidratacionActual() - (0.9f * Time.deltaTime)));
+            setHidratacionActual((int)(getHidratacionActual() - (0.02f * Time.deltaTime)));
         }
-        #endregion
     }
 
     public void Move()
