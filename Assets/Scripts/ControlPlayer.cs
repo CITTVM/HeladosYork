@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class ControlPlayer : MonoBehaviour
 {
@@ -93,8 +94,7 @@ public class ControlPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.F))
-            BulletAttack();
+        //MobileDisparo();
 
         if (Input.GetButton("Horizontal"))
         {
@@ -117,8 +117,8 @@ public class ControlPlayer : MonoBehaviour
 
 
 #if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-        Move();
-        //Move(Input.GetAxisRaw("Horizontal"));
+        //Move();
+        Move(Input.GetAxisRaw("Horizontal"));
         if (Input.GetButtonDown("Jump"))
             Jump();
 #else
@@ -128,8 +128,8 @@ public class ControlPlayer : MonoBehaviour
 
         //LLAMA AL METODO CLICK DE SLOTINVENTARIO
 #if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-        Move();
-        //Move(Input.GetAxisRaw("Horizontal"));
+        //Move();
+        Move(Input.GetAxisRaw("Horizontal"));
         if (Input.GetButtonDown("click"))
             slotInventario.click();
 
@@ -138,8 +138,8 @@ public class ControlPlayer : MonoBehaviour
 #endif
         // PARA MOVER EL MARCADOR, SE LLAMA AL MEDOTO DEL SCRIPT SLOTINVENTARIO
 #if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-        Move();
-        //Move(Input.GetAxisRaw("Horizontal"));
+        //Move();
+        Move(Input.GetAxisRaw("Horizontal"));
         if (Input.GetButtonDown("marcadore"))
             slotInventario.marcadore();
 #else
@@ -148,8 +148,8 @@ public class ControlPlayer : MonoBehaviour
 
         // PARA ABRIR EL INVENTARIO
 #if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-        Move();
-        //Move(Input.GetAxisRaw("Horizontal"));
+        //Move();
+        Move(Input.GetAxisRaw("Horizontal"));
         if (Input.GetButtonDown("abrirInventario"))
             abrirInventario();
 
@@ -157,6 +157,13 @@ public class ControlPlayer : MonoBehaviour
 		Move (hInput);
 #endif
     }
+
+    private void MobileDisparo()
+    {
+        //if (Input.GetKeyDown(KeyCode.F) || Input.GetButton(""))
+            BulletAttack();
+    }
+
     //if(Input.GetButtonDown("CambiarArma"))}
     //cambiarArma();
 
@@ -190,9 +197,9 @@ public class ControlPlayer : MonoBehaviour
         }
     }
 
-    public void Move()
+    public void Move(float horizontalInput)
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (Input.GetKey(KeyCode.RightArrow) || horizontalInput == 1)
         {
             if (!canMoveInAir && !isGrounded)
                 return;
@@ -201,7 +208,7 @@ public class ControlPlayer : MonoBehaviour
             lado = "derecha";
         }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKey(KeyCode.LeftArrow) || horizontalInput == -1)
         {
             if (!canMoveInAir && !isGrounded)
                 return;
@@ -212,12 +219,12 @@ public class ControlPlayer : MonoBehaviour
     }
     //public void Move(float horizonalInput)
     //{
-    //	if(!canMoveInAir && !isGrounded)
-    //		return;
+    //    if (!canMoveInAir && !isGrounded)
+    //        return;
 
-    //	Vector2 moveVel = myBody.velocity;
-    //	moveVel.x = horizonalInput * speed;
-    //	myBody.velocity = moveVel;
+    //    Vector2 moveVel = myBody.velocity;
+    //    moveVel.x = horizonalInput * speed;
+    //    myBody.velocity = moveVel;
     //}
 
     public void Jump()
