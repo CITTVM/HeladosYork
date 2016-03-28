@@ -45,9 +45,7 @@ public class ScriptCamara : MonoBehaviour {
         if (shakeTimer >= 0)
         {
             Vector2 shakePos = Random.insideUnitCircle * shakeAmount;
-            transform.position = new Vector3(transform.position.x + shakePos.x, transform.position.y + shakePos.y,
-
-transform.position.z);
+            transform.position = new Vector3(transform.position.x + shakePos.x, transform.position.y + shakePos.y, transform.position.z);
             shakeTimer -= Time.deltaTime;
         }
 
