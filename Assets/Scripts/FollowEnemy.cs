@@ -8,7 +8,7 @@ public class FollowEnemy : MonoBehaviour {
 
 
 	//referencia a GameManager
-	public GameManager gameManager;
+	public ControlPlayer gameManager;
 
      //establezco el daño que recibira
 	int damageValue = 1;
@@ -43,8 +43,8 @@ public class FollowEnemy : MonoBehaviour {
 
 		this.time = 0;
 
-
-		GameObject tmp = GameObject.FindGameObjectWithTag("Player");
+        gameManager = GameObject.Find("Player").GetComponent<ControlPlayer>();
+        GameObject tmp = GameObject.FindGameObjectWithTag("Player");
 		if(tmp != null){
 			this.target = tmp.transform;
 		}
@@ -101,8 +101,7 @@ public class FollowEnemy : MonoBehaviour {
 
 		if(col.gameObject.tag == "Player"){
 			gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
-			gameManager.controlPlayer.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
-
+			gameManager.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
 		}
 	}
 	// =============================

@@ -14,6 +14,8 @@ public class SettingSpawnPointLocation : MonoBehaviour {
     private int[] specialSpawn;
     public int cantidadEnemigos;
 
+
+
 	// Use this for initialization
 	void Start () {
         spawns = GameObject.FindGameObjectsWithTag("Soil");
@@ -36,9 +38,14 @@ public class SettingSpawnPointLocation : MonoBehaviour {
             }
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Awake()
+    {
+        //enemigo1.gameObject.
+    }
+
+    // Update is called once per frame
+    void Update () {
         InstanciacionProcedimental();
 	}
 

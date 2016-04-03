@@ -5,7 +5,7 @@ public class ControlEnemy : MonoBehaviour
 {
 
     //referencia a GameManager
-    public GameManager gameManager;
+    public ControlPlayer gameManager;
 
 
 
@@ -14,7 +14,10 @@ public class ControlEnemy : MonoBehaviour
     int damageValue = 1;
 
 
-
+    void Awake()
+    {
+        gameManager = GameObject.Find("Player").GetComponent <ControlPlayer>() ;
+    }
     // GENERAR COLISION
     // Si colisiona el enemigo (ontrigger porque el enemigo tiene un boxcollider2d con ontrigger activado)
     // se produce el metodo de que toma daño y el metodo que quita vida
@@ -26,7 +29,8 @@ public class ControlEnemy : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
-            gameManager.controlPlayer.SendMessage("TakenDamage", SendMessageOptions.DontRequireReceiver);
+            //gameManager.controlPlayer.SendMessage("TakenDamage", SendMessageOptions.DontRequireReceiver);
+            gameManager.SendMessage("TakenDamage", SendMessageOptions.DontRequireReceiver);
 
         }
 
@@ -54,18 +58,8 @@ public class ControlEnemy : MonoBehaviour
     public int moveSpeed = 10;
     bool moveRight = true;
 
-    void Awake()
-    {
-
-      //  inicioPos = transform.position.x;
-       
-    }
-
     void Update()
     {
-
-        
-
         if (!moveRight)
         {
             GetComponent<Rigidbody2D>().position -= Vector2.right * moveSpeed * Time.deltaTime;
@@ -74,13 +68,8 @@ public class ControlEnemy : MonoBehaviour
 
         if (moveRight)
         {
-
             GetComponent<Rigidbody2D>().position += Vector2.right * moveSpeed * Time.deltaTime;
             transform.eulerAngles = new Vector2(0, 0);
         }
-
-
-
-
     }
 }
