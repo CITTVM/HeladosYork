@@ -3,32 +3,31 @@ using System.Collections;
 
 public class attack_ovni : MonoBehaviour {
 
-    //referencia a GameManager
-    public GameManager gameManager;
+      //referencia a ControlPlayer
+    public ControlPlayer gameManager;
+
 
     //establezco el daño que recibira
     int damageValue = 1;
 
+    
+
+    // Use this for initialization
+    void Start () {
+        gameManager = GameObject.Find("Player").GetComponent<ControlPlayer>();
+    }
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
     void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == "Player")
         {
             gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
-            gameManager.controlPlayer.SendMessage("TakenDamage", SendMessageOptions.DontRequireReceiver);
-
+            gameManager.SendMessage("TakenDamage", SendMessageOptions.DontRequireReceiver);
         }
     }
-
-        // Use this for initialization
-        void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-
-	
-	}
 }

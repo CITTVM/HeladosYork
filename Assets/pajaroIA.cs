@@ -15,29 +15,35 @@ public class pajaroIA : MonoBehaviour
     public float coordenadaY; //Coordenadas en EJE Y
     public bool ataque = false;
 
+
     void OnTriggerEnter2D(Collider2D col)
     {
 
         if (col.gameObject.tag == "Player")
         {
-
+            Debug.Log("Esta dentro del collider por primera vez");
             ataque = true; //Se valida el ataque si el personaje entra en el espacio o collider del ovni.
         }
     }
-
-        void Start()
+    
+    void Start()
     {
         ataque = true; //El pajaro-ovni da una vuelta completa al iniciar para que quede en la posición inicial de cada vuelta.
+        
     }
 
     void Awake()
     {
         centroX = this.transform.position.x; //CentroX es la posición actual del ovni-pajaro en el EJE X
         centroY = this.transform.position.y; //CentroY es la posición actual del ovni-pajaro en el EJE Y
-
+        
     }
     void Update()
     {
+        if (true)
+        {
+
+        }
 
         if (ataque)
         {
