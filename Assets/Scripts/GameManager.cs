@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
 	//para quitar health o agregar health
 	void OnGUI(){
-		for(int h = 0; h < playerHealth; h++) {
+		for(int h = 0; h > playerHealth; h++) {
 			GUI.DrawTexture(new Rect(screenPositionX + (h * iconSizeX), screenPositionY, iconSizeX, iconSizeY), playerHealthTexture, ScaleMode.ScaleToFit, true, 0);
 		}
 
