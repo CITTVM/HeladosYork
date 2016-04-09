@@ -24,97 +24,15 @@ public class SettingSpawnPointLocation : MonoBehaviour {
 
         foreach (GameObject spawn in spawns)
         {
-            if (Random.Range(0f,1f) >= 0.5f)
-            {
-                vectores[contador] = new Vector3(spawn.transform.position.x, spawn.transform.position.y + 1, 0);
-                contador++;
-            }
-            else
-            {
-                vectores[contador] = new Vector3(spawn.transform.position.x, spawn.transform.position.y + 3, 0);
-                specialSpawn[aire] = contador;
-                contador++;
-                aire++;
-            }
+            vectores[contador] = new Vector3(spawn.transform.position.x, spawn.transform.position.y + 1, 0);
+            contador++;
         }
 	}
-
-    void Awake()
-    {
-        //enemigo1.gameObject.
-    }
 
     // Update is called once per frame
     void Update () {
         InstanciacionProcedimental();
 	}
-
-    //private void InstanciacionProcedimental()
-    //{
-    //    float indicador = Random.Range(0f, 1f);
-    //    int spawnPoint = Random.Range(0, spawns.Length);
-    //    int verificador = 0;
-    //    if (GameObject.FindGameObjectsWithTag("Enemy").Length < cantidadEnemigos)
-    //    {
-    //        if (indicador > 0f && indicador < 0.3f)
-    //        {
-    //            foreach (int spawn in specialSpawn)
-    //            {
-    //                if (spawnPoint == spawn)
-    //                {
-    //                    Instantiate(enemigo1, new Vector3(vectores[spawnPoint].x, vectores[spawnPoint].y, vectores[spawnPoint].z), Quaternion.identity);
-    //                }
-    //                else
-    //                {
-    //                    verificador++;
-    //                }
-    //            }
-    //            if (verificador == specialSpawn.Length)
-    //            {
-    //                verificador = 0;
-    //                Instantiate(enemigo2, new Vector3(vectores[spawnPoint].x, vectores[spawnPoint].y, vectores[spawnPoint].z), Quaternion.identity);
-    //            }
-    //        }
-    //        else if (indicador > 0.3f && indicador < 0.6f)
-    //        {
-    //            foreach (int spawn in specialSpawn)
-    //            {
-    //                if (spawnPoint == spawn)
-    //                {
-    //                    Instantiate(enemigo1, new Vector3(vectores[spawnPoint].x, vectores[spawnPoint].y, vectores[spawnPoint].z), Quaternion.identity);
-    //                }
-    //                else
-    //                {
-    //                    verificador++;
-    //                }
-    //            }
-    //            if (verificador == specialSpawn.Length)
-    //            {
-    //                verificador = 0;
-    //                Instantiate(enemigo3, new Vector3(vectores[spawnPoint].x, vectores[spawnPoint].y, vectores[spawnPoint].z), Quaternion.identity);
-    //            }
-    //        }
-    //        else
-    //        {
-    //            foreach (int spawn in specialSpawn)
-    //            {
-    //                if (spawnPoint == spawn)
-    //                {
-    //                    Instantiate(enemigo2, new Vector3(vectores[spawnPoint].x, vectores[spawnPoint].y, vectores[spawnPoint].z), Quaternion.identity);
-    //                }
-    //                else
-    //                {
-    //                    verificador++;
-    //                }
-    //            }
-    //            if (verificador == specialSpawn.Length)
-    //            {
-    //                verificador = 0;
-    //                Instantiate(enemigo3, new Vector3(vectores[spawnPoint].x, vectores[spawnPoint].y, vectores[spawnPoint].z), Quaternion.identity);
-    //            }
-    //        }
-    //    }
-    //}
 
     private void InstanciacionProcedimental()
     {
@@ -131,7 +49,7 @@ public class SettingSpawnPointLocation : MonoBehaviour {
             }
             else
             {
-                Instantiate(enemigo1, new Vector3(vectores[indicador].x, vectores[indicador].y, vectores[indicador].z), Quaternion.identity);
+                Instantiate(enemigo1, new Vector3(vectores[indicador].x, vectores[indicador].y + 8, vectores[indicador].z), Quaternion.identity);
             }
         }
     }
