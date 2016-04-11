@@ -16,16 +16,27 @@ public class pajaroIA : MonoBehaviour
     public bool ataque = false;
 
 
-    void OnTriggerEnter2D(Collider2D col)
+    /* void OnTriggerEnter2D(Collider2D col)
+     {
+
+         if (col.gameObject.tag == "Player")
+         {
+             Debug.Log("Esta dentro del collider por primera vez");
+             ataque = true; //Se valida el ataque si el personaje entra en el espacio o collider del ovni.
+         }
+     }
+     */
+    void OnTriggerStay2D(Collider2D col)
     {
 
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Esta dentro del collider por primera vez");
+            Debug.Log("Sigues dentro del collider");
             ataque = true; //Se valida el ataque si el personaje entra en el espacio o collider del ovni.
         }
     }
-    
+
+
     void Start()
     {
         ataque = true; //El pajaro-ovni da una vuelta completa al iniciar para que quede en la posición inicial de cada vuelta.
