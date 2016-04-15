@@ -65,23 +65,33 @@ public class FollowEnemy : MonoBehaviour {
 		}
 	}
 
-	// =============================
-	void FixedUpdate(){
-		isGrounded = Physics2D.OverlapCircle (compSuelo.position, comprobadorRadio, mascaraSuelo);
-		this.movement = this.body.velocity;
+    // =============================
 
-		// Movimiento horizontal
-		this.movement.x = horInput * walkSpeed;
+    void FixedUpdate()
+    {
+    }
+    void OnTriggerStay2D(Collider2D col)
+    {
+        isGrounded = Physics2D.OverlapCircle(compSuelo.position, comprobadorRadio, mascaraSuelo);
+        this.movement = this.body.velocity;
 
-		// Limitacion de la velocidad de caida
-		if( !this.isGrounded ){
-			if(this.movement.y < this.maxFallSpeed){
-				this.movement.y = this.maxFallSpeed;
-			}
-		}
+        if (col.gameObject.tag == "Player")
+        {
+            // Movimiento horizontal limitado al grounded.
+           // if (this.isGrounded)
+                this.movement.x = horInput * walkSpeed;
+        }
 
-		this.body.velocity = this.movement;
+        // Limitacion de la velocidad de caida
+        if (!this.isGrounded)
+        {
+            if (this.movement.y < this.maxFallSpeed)
+                this.movement.y = this.maxFallSpeed;
+        }
+        this.body.velocity = this.movement;
+
 	}
+        
 	// =============================
 	// =============================
 	void Detect(){
@@ -97,13 +107,15 @@ public class FollowEnemy : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D(Collider2D col){
+	/*void OnTriggerEnter2D(Collider2D col){
 
 		if(col.gameObject.tag == "Player"){
 			gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
 			gameManager.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
 		}
-	}
+	}*/
+
+
 	// =============================
 
 }
