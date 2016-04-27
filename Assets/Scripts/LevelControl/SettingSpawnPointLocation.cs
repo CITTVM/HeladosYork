@@ -35,7 +35,9 @@ public class SettingSpawnPointLocation : MonoBehaviour {
     void Update () {
         InstanciacionProcedimental();
 	}
-
+    //Hace falta sumar el Y a los enemigos dependiendo de el grosor de la
+    //plataforma. yo subi sólo un poco y en algunas plataformas se ve bien 
+    //nadamás.
     private void InstanciacionProcedimental()
     {
         int indicador = Random.Range(0, vectores.Length);
@@ -43,12 +45,12 @@ public class SettingSpawnPointLocation : MonoBehaviour {
         {
             if (Random.Range(0f,1f) >= 0.5f)
             {
-                Instantiate(enemigo3, new Vector3(vectores[indicador].x, vectores[indicador].y, vectores[indicador].z), Quaternion.identity);
+                Instantiate(enemigo3, new Vector3(vectores[indicador].x, vectores[indicador].y + 2, vectores[indicador].z), Quaternion.identity);
                 
             }
             else if (Random.Range(0f,1f) >= 0.5f)
             {
-                Instantiate(enemigo2, new Vector3(vectores[indicador].x, vectores[indicador].y, vectores[indicador].z), Quaternion.identity);
+                Instantiate(enemigo2, new Vector3(vectores[indicador].x, vectores[indicador].y + 2, vectores[indicador].z), Quaternion.identity);
             }
             else
             {

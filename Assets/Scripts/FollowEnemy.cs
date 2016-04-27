@@ -1,121 +1,127 @@
 ﻿using UnityEngine;
 using System.Collections;
+//Actualmente heredando de ControlEnemy Para poder lograr que persiga
+public class FollowEnemy : ControlEnemy
+{
+    public float walkSpeed;
+    public float maxFallSpeed;
+    public float jumpImpulse;
 
-public class FollowEnemy : MonoBehaviour {
-	public float walkSpeed;
-	public float maxFallSpeed;
-	public float jumpImpulse;
+    private Transform target;
+    private Rigidbody2D body;
+    private Vector2 movement;
 
+    private float horInput;
 
-	//referencia a GameManager
-	public ControlPlayer gameManager;
+    public bool persiguiendo = false;
+    public bool isGrounded = false;
+    public Transform compSuelo;
+    float comprobadorRadio = 0.03f;
+    public LayerMask mascaraSuelo;
 
-     //establezco el daño que recibira
-	int damageValue = 1;
+    private float time;
 
+    void Start()
+    {
 
+        this.body = this.GetComponent<Rigidbody2D>();
+        this.movement = new Vector2();
 
-	private Transform target;
-	private Rigidbody2D body;
-	private Vector2 movement;
-
-	private float horInput;
-
-
-
-	public bool isGrounded = false;
-	public Transform compSuelo;
-	float comprobadorRadio =0.03f;
-	public LayerMask mascaraSuelo;
-
-
-
-
-	private float time;
-
-
-	// =============================
-	void Start () {
-
-		this.body = this.GetComponent<Rigidbody2D>();
-		this.movement = new Vector2();
-		 
-
-		this.time = 0;
+        this.time = 0;
 
         gameManager = GameObject.Find("Player").GetComponent<ControlPlayer>();
         GameObject tmp = GameObject.FindGameObjectWithTag("Player");
-		if(tmp != null){
-			this.target = tmp.transform;
-		}
-	}
-	// =============================
-	void Update () {
-		this.time += Time.deltaTime;
+        if (tmp != null)
+        {
+            this.target = tmp.transform;
+        }
+    }
+    
+    //Update donde busca hacia donde perseguir cuando sea la hora
+    //y patrulleo en su dado caso.
+    void Update()
+    {
+        this.time += Time.deltaTime;
 
-		// search for the player
-		if (this.target) {
-			if (this.transform.position.x < this.target.position.x) {
-				this.horInput = 1;
-			} else if (this.transform.position.x > this.target.position.x) {
-				this.horInput = -1;
-			}
-		} else {
-			this.horInput = 0;
-		}
-	}
+        // search for the player
+        if (this.target)
+        {
+            if (this.transform.position.x < this.target.position.x)
+            {
+                this.horInput = 1;
+            }
+            else if (this.transform.position.x > this.target.position.x)
+            {
+                this.horInput = -1;
+            }
+        }
+        else
+        {
+            this.horInput = 0;
+        }
+        //Si no está persiguiendo, que patrulle.
+        if (!persiguiendo)
+        {
+            base.Patrulleo();
+        }
+
+    }
 
     // =============================
 
     void FixedUpdate()
     {
     }
+    //perseguimiento método.
     void OnTriggerStay2D(Collider2D col)
     {
-        isGrounded = Physics2D.OverlapCircle(compSuelo.position, comprobadorRadio, mascaraSuelo);
-        this.movement = this.body.velocity;
-
         if (col.gameObject.tag == "Player")
         {
-            // Movimiento horizontal limitado al grounded.
-           // if (this.isGrounded)
+            persiguiendo = true;
+            isGrounded = Physics2D.OverlapCircle(compSuelo.position, comprobadorRadio, mascaraSuelo);
+            this.movement = this.body.velocity;
+
+            if (col.gameObject.tag == "Player")
+            {
+                // Movimiento horizontal limitado al grounded.
+                // if (this.isGrounded)
                 this.movement.x = horInput * walkSpeed;
-        }
+            }
 
-        // Limitacion de la velocidad de caida
-        if (!this.isGrounded)
+            // Limitacion de la velocidad de caida
+            if (!this.isGrounded)
+            {
+                if (this.movement.y < this.maxFallSpeed)
+                    this.movement.y = this.maxFallSpeed;
+            }
+            this.body.velocity = this.movement;
+
+        }
+    }
+    //al salir de perseguir que vuelva a patrullar.
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+            persiguiendo = false;
+    }
+    // =============================
+    void Detect()
+    {
+        if (this.isGrounded)
         {
-            if (this.movement.y < this.maxFallSpeed)
-                this.movement.y = this.maxFallSpeed;
+            this.movement.y = jumpImpulse;
+
         }
-        this.body.velocity = this.movement;
+    }
+    //para almacenar las distancias para patrullar, metodo heredado.
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Soil")
+        {
+            base.ExtraerDistanciaPlataforma(col);
+        }
+    }
+    // =============================
 
-	}
-        
-	// =============================
-	// =============================
-	void Detect(){
-		//Collider2D tmp = Physics2D.OverlapCircle(compSuelo.position, comprobadorRadio, mascaraSuelo);
-		//if(tmp){
-			//if(tmp.gameObject.CompareTag("Player")){
-				
-			//}else{
-				if(this.isGrounded){
-					this.movement.y = jumpImpulse;
-				//}
-			//}
-		}
-	}
-
-	/*void OnTriggerEnter2D(Collider2D col){
-
-		if(col.gameObject.tag == "Player"){
-			gameManager.SendMessage("PlayerDamaged", damageValue, SendMessageOptions.DontRequireReceiver);
-			gameManager.SendMessage ("TakenDamage", SendMessageOptions.DontRequireReceiver);
-		}
-	}*/
-
-
-	// =============================
 
 }
