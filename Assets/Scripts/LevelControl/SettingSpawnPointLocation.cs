@@ -13,7 +13,7 @@ public class SettingSpawnPointLocation : MonoBehaviour {
     private int aire = 0;
     private int[] specialSpawn;
     public int cantidadEnemigos;
-    public double[] longitudSpawns;
+    public float[] anchoSpawns;
 
 
 	// Use this for initialization
@@ -21,11 +21,11 @@ public class SettingSpawnPointLocation : MonoBehaviour {
         spawns = GameObject.FindGameObjectsWithTag("Soil");
         vectores = new Vector3[spawns.Length];
         specialSpawn = new int[spawns.Length];
-        longitudSpawns = new double[spawns.Length];
+        anchoSpawns = new float[spawns.Length];
         foreach (GameObject spawn in spawns)
         {
             var size = spawn.GetComponent<Collider2D>();
-            longitudSpawns[contador] = size.bounds.size.x;
+            anchoSpawns[contador] = (size.bounds.size.y / 1.7f);
             vectores[contador] = new Vector3(spawn.transform.position.x, spawn.transform.position.y + 1, 0);
             contador++;
         }
@@ -45,16 +45,16 @@ public class SettingSpawnPointLocation : MonoBehaviour {
         {
             if (Random.Range(0f,1f) >= 0.5f)
             {
-                Instantiate(enemigo3, new Vector3(vectores[indicador].x, vectores[indicador].y + 2, vectores[indicador].z), Quaternion.identity);
+                Instantiate(enemigo3, new Vector3(vectores[indicador].x, vectores[indicador].y + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
                 
             }
             else if (Random.Range(0f,1f) >= 0.5f)
             {
-                Instantiate(enemigo2, new Vector3(vectores[indicador].x, vectores[indicador].y + 2, vectores[indicador].z), Quaternion.identity);
+                Instantiate(enemigo2, new Vector3(vectores[indicador].x, vectores[indicador].y + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
             }
             else
             {
-                Instantiate(enemigo1, new Vector3(vectores[indicador].x, vectores[indicador].y + 8, vectores[indicador].z), Quaternion.identity);
+                Instantiate(enemigo1, new Vector3(vectores[indicador].x, vectores[indicador].y + 7.5f + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
             }
         }
     }
