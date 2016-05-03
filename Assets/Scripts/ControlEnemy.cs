@@ -11,8 +11,8 @@ public class ControlEnemy : MonoBehaviour
 
     //establezco el daño que recibira
     int damageValue = 1;
-    double distanciaMaxima = 0;
-    double distanciaMinima = 0;
+    protected double distanciaMaxima = 0;
+    protected double distanciaMinima = 0;
     bool DistanciaAgarrada = false;
 
     void Awake()

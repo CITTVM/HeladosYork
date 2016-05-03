@@ -36,7 +36,7 @@ public class FollowEnemy : ControlEnemy
             this.target = tmp.transform;
         }
     }
-    
+
     //Update donde busca hacia donde perseguir cuando sea la hora
     //y patrulleo en su dado caso.
     void Update()
@@ -59,11 +59,20 @@ public class FollowEnemy : ControlEnemy
         {
             this.horInput = 0;
         }
-        //Si no está persiguiendo, que patrulle.
-        if (!persiguiendo)
+
+        //Aquí en el update es donde cortamos de la raiz la transicion
+        // de la herencia si no está en los limites caminables
+        //y aquí también se puede lograr que si no está persiguiendo ni
+        //patrulle por estar cerca, haga una animacion, se quede quieto, etc.
+        // se puede lograr mucho en este preciso lugar.
+
+        //Básicamente: si está persiguiendo y no está dentro 
+        //de los limites, que patrulle.
+        if (!persiguiendo || (this.transform.position.x < this.distanciaMinima || this.transform.position.x > this.distanciaMaxima))
         {
             base.Patrulleo();
         }
+
 
     }
 
@@ -84,8 +93,11 @@ public class FollowEnemy : ControlEnemy
             if (col.gameObject.tag == "Player")
             {
                 // Movimiento horizontal limitado al grounded.
-                // if (this.isGrounded)
-                this.movement.x = horInput * walkSpeed;
+                if (this.isGrounded)
+                {
+                    this.movement.x = horInput * walkSpeed;
+                }
+
             }
 
             // Limitacion de la velocidad de caida
