@@ -17,10 +17,13 @@ public class BossIA : MonoBehaviour {
     public ControlPlayer gameManager;
 
 
+    public float moveSpeed = 5;
+    public Rigidbody2D rb;
+
 
     // Use this for initialization
     void Start () {
-
+        rb= GetComponent<Rigidbody2D>();
         gameManager = GameObject.Find("Player").GetComponent<ControlPlayer>();
         GameObject tmp = GameObject.FindGameObjectWithTag("Player");
         if (tmp != null)
@@ -32,6 +35,7 @@ public class BossIA : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
 
         if (Time.time >= cooldown)
         {
@@ -57,5 +61,16 @@ public class BossIA : MonoBehaviour {
 
         bPrefab.GetComponent<Rigidbody2D>().AddForce(dir * bulletSpeed);
         cooldown = Time.time + attackSpeed;
+    }
+
+    void FixedUpdate()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        ManejarMovimiento(horizontal);
+        
+    }
+    private void ManejarMovimiento(float horizontal)
+    {
+        rb.velocity = new Vector2(horizontal*moveSpeed, rb.velocity.y);
     }
 }
