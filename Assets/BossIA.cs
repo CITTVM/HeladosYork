@@ -18,6 +18,7 @@ public class BossIA : MonoBehaviour {
 
 
     public float moveSpeed = 5;
+    public float jumpSpeed = 200;
     public Rigidbody2D rb;
 
 
@@ -67,7 +68,15 @@ public class BossIA : MonoBehaviour {
     {
         float horizontal = Input.GetAxis("Horizontal");
         ManejarMovimiento(horizontal);
-        
+
+        //float inputY = Input.GetAxis("Vertical");
+        if (Input.GetKeyDown("space"))
+        {
+            //rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
+            //rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+            rb.velocity += jumpSpeed * Vector2.up;
+        }
+
     }
     private void ManejarMovimiento(float horizontal)
     {
