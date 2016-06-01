@@ -16,6 +16,7 @@ public class BossIA : MonoBehaviour
     private Transform target;
 
     public ControlPlayer gameManager;
+    public AudioSource disparo;
 
 
     public float moveSpeed = 5;
@@ -121,6 +122,7 @@ public class BossIA : MonoBehaviour
     private void Fire()
     {
         Vector2 dir;
+        disparo.Play();
         dir = target.transform.position - transform.position;
         dir = dir.normalized;
 

@@ -67,7 +67,7 @@ public class ControlPlayer : MonoBehaviour
     public AudioSource aterrizar;
     public AudioSource pisada1;
     public AudioSource pisada2;
-
+    public AudioSource Disparo;
     #endregion
 
 
@@ -349,11 +349,13 @@ public class ControlPlayer : MonoBehaviour
             {
                 GameObject bPrefab = Instantiate(bullet1, transform.position, Quaternion.identity) as GameObject;
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 900);
+                Disparo.Play();
             }
             else if(lado.Equals("izquierda"))
             {
                 GameObject bPrefab = Instantiate(bullet1, transform.position, Quaternion.identity) as GameObject;
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 900);
+                Disparo.Play();
             }
 
 
@@ -365,11 +367,13 @@ public class ControlPlayer : MonoBehaviour
             {
                 GameObject bPrefab = Instantiate(bullet2, transform.position, Quaternion.identity) as GameObject;
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 900);
+                Disparo.Play();
             }
             else if(lado.Equals("izquierda"))
             {
                 GameObject bPrefab = Instantiate(bullet2, transform.position, Quaternion.identity) as GameObject;
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 900);
+                Disparo.Play();
             }
         }
     }
