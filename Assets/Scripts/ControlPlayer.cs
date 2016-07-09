@@ -125,14 +125,7 @@ public class ControlPlayer : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(compSuelo.position, comprobadorRadio, mascaraSuelo);
 
 
-#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
-        //Move();
-        Move(Input.GetAxisRaw("Horizontal"));
-        if (Input.GetButtonDown("Jump"))
-            Jump();
-#else
-		Move (hInput);
-#endif
+
 
 
         //LLAMA AL METODO CLICK DE SLOTINVENTARIO
@@ -194,6 +187,14 @@ public class ControlPlayer : MonoBehaviour
         //    setHidratacionActual((int)(getHidratacionActual() - (0.05f * Time.deltaTime)));
         //}
         #endregion
+#if !UNITY_ANDROID && !UNITY_IPHONE && !UNITY_BLACKBERRY && !UNITY_WINRT || UNITY_EDITOR
+        //Move();
+        Move(Input.GetAxisRaw("Horizontal"));
+        if (Input.GetButtonDown("Jump"))
+            Jump();
+#else
+		Move (hInput);
+#endif
     }
 
     IEnumerator DescHidratacion()
