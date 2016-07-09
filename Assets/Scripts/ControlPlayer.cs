@@ -7,8 +7,6 @@ using UnityEngine.SceneManagement;
 public class ControlPlayer : MonoBehaviour
 {
 
-
-
     public float speed = 15, jumpVelocity = 40;
     public LayerMask playerMask;
     public bool canMoveInAir = true;
