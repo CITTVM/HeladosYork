@@ -6,7 +6,8 @@ using System;
 public class BossIA : MonoBehaviour
 {
 
-    //Variable de alerta de control estático que se comunica con el trigger
+    //Variable de activacion de Boss IA.
+    //Se activa cuando el trigger circular de bossfight da la señal a la variable.
     public static bool alerta = false;
     //Atributos de Boss
     public Rigidbody2D balaPrefab;
@@ -36,7 +37,6 @@ public class BossIA : MonoBehaviour
     protected double distanciaMaxima = 0;
     protected double distanciaMinima = 0;
     bool DistanciaAgarrada = false;
-
 
     // Variable booleana que controla la dirección del patrullaje como una bandera.
     bool moveRight = true;
@@ -77,18 +77,15 @@ public class BossIA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if(alerta)
+        if (alerta)
         {
-            Patrulleo();
-
             if (Time.time >= cooldown)
             {
                 Fire();
             }
+
+            Patrulleo();
         }
-
-
     }
 
 
@@ -152,7 +149,7 @@ public class BossIA : MonoBehaviour
                     Quaternion.identity) as Rigidbody2D;
 
         bPrefab.GetComponent<Rigidbody2D>().AddForce(dir * bulletSpeed);
-        cooldown = Time.time + attackSpeed*2;
+        cooldown = Time.time + attackSpeed * 2;
     }
 
 
