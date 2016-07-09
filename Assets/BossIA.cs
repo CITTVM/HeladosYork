@@ -5,6 +5,9 @@ using System;
 
 public class BossIA : MonoBehaviour
 {
+
+    //Variable de alerta de control estático que se comunica con el trigger
+    public static bool alerta = false;
     //Atributos de Boss
     public Rigidbody2D balaPrefab;
     public float attackSpeed = 25;
@@ -34,12 +37,14 @@ public class BossIA : MonoBehaviour
     protected double distanciaMinima = 0;
     bool DistanciaAgarrada = false;
 
+
     // Variable booleana que controla la dirección del patrullaje como una bandera.
     bool moveRight = true;
 
     void Awake()
     {
         gameManager = GameObject.Find("Player").GetComponent<ControlPlayer>();
+        alerta = false;
     }
 
     // Use this for initialization
@@ -73,12 +78,16 @@ public class BossIA : MonoBehaviour
     void Update()
     {
 
-        Patrulleo();
-
-        if (Time.time >= cooldown)
+        if(alerta)
         {
+            Patrulleo();
+
+            if (Time.time >= cooldown)
+            {
                 Fire();
+            }
         }
+
 
     }
 
