@@ -2,34 +2,39 @@
 using System.Collections;
 using System;
 
+
 public class BossIA : MonoBehaviour
 {
-
+    //Atributos de Boss
     public Rigidbody2D balaPrefab;
-    public float attackSpeed = 0.5f;
+    public float attackSpeed = 25;
     public float cooldown;
     public float bulletSpeed = 500;
 
-    public float ypos = 1f;   //usado para lograr que salga del lugar de ignicion
-    public float xpos = 0.2f; // ^ 
+    public float ypos = 1f;   //   usado para lograr que salga del lugar de ignicion
+    public float xpos = 0.2f; //   usado para lograr que salga del lugar de ignicion
 
+    //Objetivo - Probablemente el Player.
     private Transform target;
-
     public ControlPlayer gameManager;
+
+    //Sonido del disparo.
     public AudioSource disparo;
 
-
+    //Atributos de movimiento de la bala.
     public float moveSpeed = 5;
     public float jumpSpeed = 200;
     public Rigidbody2D rb;
 
     //establezco el daño que recibira
     int damageValue = 1;
+
+    //Variables para la funcionalidad del Patrulleo
     protected double distanciaMaxima = 0;
     protected double distanciaMinima = 0;
     bool DistanciaAgarrada = false;
 
-    // MOVIMIENTO DERECHA A IZQUIERDA DEL ENEMIGO
+    // Variable booleana que controla la dirección del patrullaje como una bandera.
     bool moveRight = true;
 
     void Awake()
@@ -49,6 +54,8 @@ public class BossIA : MonoBehaviour
         }
 
     }
+
+    //Este trigger para entrar es para conseguir el collider de la plataforma "Soil".
     void OnTriggerEnter2D(Collider2D col)
     {
 
@@ -70,13 +77,14 @@ public class BossIA : MonoBehaviour
 
         if (Time.time >= cooldown)
         {
-            if (Input.GetMouseButton(0))
-            {
                 Fire();
-            }
         }
 
     }
+
+
+
+    //Funcion que permite traer la distancia de la plataforma en la cual patrullará.
     public void ExtraerDistanciaPlataforma(Collider2D col)
     {
         if (!DistanciaAgarrada)
@@ -88,6 +96,7 @@ public class BossIA : MonoBehaviour
         }
     }
 
+    //Función de patrulleo para que vaya de lado a lado en las plataformas aparentemente.
     public void Patrulleo()
     {
 
@@ -119,6 +128,7 @@ public class BossIA : MonoBehaviour
         }
     }
 
+    //Función que hace que dispares un cono directo hacia el jugador. 
     private void Fire()
     {
         Vector2 dir;
@@ -133,31 +143,12 @@ public class BossIA : MonoBehaviour
                     Quaternion.identity) as Rigidbody2D;
 
         bPrefab.GetComponent<Rigidbody2D>().AddForce(dir * bulletSpeed);
-        cooldown = Time.time + attackSpeed;
+        cooldown = Time.time + attackSpeed*2;
     }
 
 
 
     void FixedUpdate()
-    {/*
-        float horizontal = Input.GetAxis("Horizontal");
-        ManejarMovimiento(horizontal);
-
-        //float inputY = Input.GetAxis("Vertical");
-  
-        
-        if (Input.GetKeyDown("space"))
-        {
-            //rb.AddForce(new Vector2(0, 10), ForceMode2D.Impulse);
-            //rb.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-            rb.velocity += jumpSpeed * Vector2.up;
-        }
-        */
-
-
-    }
-    /*private void ManejarMovimiento(float horizontal)
     {
-        rb.velocity = new Vector2(horizontal * moveSpeed, rb.velocity.y);
-    }*/
+    }
 }
