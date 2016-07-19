@@ -19,4 +19,6 @@ public Animator MyAnimation { get; private set; }
 	void Update () {
 	
 	}
+
+    public abstract IEnumerator TakeDamage();
 }

@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class EnemyVista : MonoBehaviour {
+public class VoladorVista : MonoBehaviour {
     [SerializeField]
-    private Enemy enemy;
+    private EnemigoVolador volador;
 
 void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.tag == "Player")
         {
-            enemy.Target = other.gameObject;
+            volador.Target = other.gameObject;
         }
     }
 
@@ -17,7 +17,7 @@ void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
         {
-            enemy.Target = null;
+            volador.Target = null;
         }
     }
 }

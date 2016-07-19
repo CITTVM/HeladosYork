@@ -2,11 +2,11 @@
 using System.Collections;
 using System;
 
-public class IdleState : IEnemyState {
+public class IdleState : IVoladorState {
 
-    private Enemy enemy;
+    private EnemigoVolador enemy;
 
-    public void Enter(Enemy enemy)
+    public void Enter(EnemigoVolador enemy)
     {
         this.enemy = enemy;
     }

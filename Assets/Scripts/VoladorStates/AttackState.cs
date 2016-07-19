@@ -2,12 +2,11 @@
 using System.Collections;
 using System;
 
-public class AttackState : IEnemyState
+public class AttackState : IVoladorState
 {
-    private Enemy enemy;
+    private EnemigoVolador enemy;
 
-
-    public void Enter(Enemy enemy)
+    public void Enter(EnemigoVolador enemy)
     {
         this.enemy = enemy;
     }
@@ -16,7 +15,8 @@ public class AttackState : IEnemyState
     {
         Debug.Log("Estoy atacandote");
         Attack();
-        
+
+
     }
 
     public void Exit()
@@ -30,7 +30,7 @@ public class AttackState : IEnemyState
 
     public void OnTriggerEnter(Collider2D other)
     {
-
+       
     }
 
     public void Attack()
@@ -39,4 +39,7 @@ public class AttackState : IEnemyState
         enemy.MyAnimation.SetBool("muere", false);
         enemy.Ataque();
     }
+
+
+
 }

@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class Player : Character {
 
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -12,4 +14,9 @@ public class Player : Character {
 	void Update () {
 	
 	}
+
+    public override IEnumerator TakeDamage()
+    {
+        yield return null;
+    }
 }
