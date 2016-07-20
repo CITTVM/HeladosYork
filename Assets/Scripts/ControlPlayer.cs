@@ -403,7 +403,7 @@ public class ControlPlayer : MonoBehaviour
     //reinicia la escena
     void RestartScene()
     {
-        SceneManager.LoadScene("Test");
+        SceneManager.LoadScene("GameOver");
     }
     //METODO QUE AUMENTA VIDA (como maximo 5)
 
