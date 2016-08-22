@@ -26,7 +26,7 @@ public class SettingSpawnPointLocation : MonoBehaviour {
         {
             var size = spawn.GetComponent<Collider2D>();
             anchoSpawns[contador] = (size.bounds.size.y / 1.7f);
-            vectores[contador] = new Vector3(spawn.transform.position.x, spawn.transform.position.y + 1, 0);
+            vectores[contador] = new Vector3(spawn.transform.position.x, spawn.transform.position.y + 1, 1);
             contador++;
         }
 	}

@@ -20,4 +20,10 @@ public class TriggerBossFight : MonoBehaviour
         if (col.gameObject.tag == "Player")
             BossIA.alerta = true;
     }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.gameObject.tag == "Player")
+            BossIA.alerta = false;
+    }
 }

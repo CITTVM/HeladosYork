@@ -14,6 +14,7 @@ public class BossIA : MonoBehaviour
     public float attackSpeed = 25;
     public float cooldown;
     public float bulletSpeed = 500;
+    public float saltoCD;
 
     public float ypos = 1f;   //   usado para lograr que salga del lugar de ignicion
     public float xpos = 0.2f; //   usado para lograr que salga del lugar de ignicion
@@ -81,11 +82,18 @@ public class BossIA : MonoBehaviour
         {
             if (Time.time >= cooldown)
             {
-                Fire();
+                if (saltoCD%3 == 0)
+                {
+                    Fire();
+                }
             }
-
-            Patrulleo();
+            saltoCD += Time.deltaTime;
+            if (saltoCD%5 == 0)
+            {
+                this.GetComponent<Rigidbody2D>().velocity += Vector2.up;
+            }
         }
+        Patrulleo();
     }
 
 
