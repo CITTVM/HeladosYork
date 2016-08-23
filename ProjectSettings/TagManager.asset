@@ -16,6 +16,7 @@ TagManager:
   - DeadZone
   - Hitbox
   - SpawnPoint
+  - Boss
   layers:
   - Default
   - TransparentFX

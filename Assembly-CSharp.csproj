@@ -76,6 +76,7 @@
      <Compile Include="Assets\Scripts\LevelControl\SettingSpawnPointLocation.cs" />
      <Compile Include="Assets\Scripts\MenuPrincipal.cs" />
      <Compile Include="Assets\Scripts\MusicManager.cs" />
+     <Compile Include="Assets\Scripts\NivelTermino.cs" />
      <Compile Include="Assets\Scripts\OpcionParalaje.cs" />
      <Compile Include="Assets\Scripts\OptionsManager.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />

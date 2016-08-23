@@ -13,7 +13,8 @@ public class BulletScript : MonoBehaviour {
 		
 		} 
 
-
+		if (col.gameObject.tag == "Boss")
+			Destroy (gameObject);
 	}
 
 

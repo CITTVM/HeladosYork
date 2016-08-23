@@ -1733,7 +1733,7 @@ GameObject:
   - 61: {fileID: 300335783}
   m_Layer: 8
   m_Name: Level_Test (12)
-  m_TagString: Soil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5141,7 +5141,7 @@ GameObject:
   - 61: {fileID: 969775793}
   m_Layer: 8
   m_Name: Level_Test (9)
-  m_TagString: Soil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5687,7 +5687,7 @@ GameObject:
   - 61: {fileID: 1116865597}
   m_Layer: 8
   m_Name: Level_Test (5)
-  m_TagString: Soil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5872,6 +5872,14 @@ Prefab:
       propertyPath: disparo
       value: 
       objectReference: {fileID: 254052582}
+    - target: {fileID: 11458904, guid: 6cb6ce9df3c540b48b9aa8b127be3d53, type: 2}
+      propertyPath: terminoNivel
+      value: TerminoNivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 109210, guid: 6cb6ce9df3c540b48b9aa8b127be3d53, type: 2}
+      propertyPath: m_TagString
+      value: Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6cb6ce9df3c540b48b9aa8b127be3d53, type: 2}
   m_IsPrefabParent: 0
@@ -6611,7 +6619,7 @@ GameObject:
   - 61: {fileID: 1395876102}
   m_Layer: 8
   m_Name: Level_Test (10)
-  m_TagString: Soil
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

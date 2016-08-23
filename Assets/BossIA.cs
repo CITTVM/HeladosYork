@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.SceneManagement;
 
 
 public class BossIA : MonoBehaviour
@@ -15,6 +16,9 @@ public class BossIA : MonoBehaviour
     public float cooldown;
     public float bulletSpeed = 500;
     public float saltoCD;
+	public float tiempoInicio = Time.time;
+	public int vidas;
+	public string terminoNivel;
 
     public float ypos = 1f;   //   usado para lograr que salga del lugar de ignicion
     public float xpos = 0.2f; //   usado para lograr que salga del lugar de ignicion
@@ -46,6 +50,7 @@ public class BossIA : MonoBehaviour
     {
         gameManager = GameObject.Find("Player").GetComponent<ControlPlayer>();
         alerta = false;
+		vidas = 5;
     }
 
     // Use this for initialization
@@ -72,7 +77,13 @@ public class BossIA : MonoBehaviour
             ExtraerDistanciaPlataforma(col);
         }
 
+		if (col.gameObject.tag == "Bullet1" || col.gameObject.tag == "Bullet2") {
+			vidas--;
 
+			if (vidas == 0)
+				SceneManager.LoadScene (terminoNivel);
+		}
+			
     }
 
     // Update is called once per frame
@@ -87,10 +98,10 @@ public class BossIA : MonoBehaviour
                     Fire();
                 }
             }
-            saltoCD += Time.deltaTime;
+			saltoCD += (Time.time - tiempoInicio);
             if (saltoCD%5 == 0)
             {
-                this.GetComponent<Rigidbody2D>().velocity += Vector2.up;
+				this.GetComponent<Rigidbody2D> ().AddForce (Vector2.up);
             }
         }
         Patrulleo();
