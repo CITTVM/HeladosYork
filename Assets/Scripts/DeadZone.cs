@@ -16,7 +16,7 @@ public class DeadZone : MonoBehaviour {
 	}
 	void RestartScene(){
 
-		SceneManager.LoadScene("Test");
+		SceneManager.LoadScene("GameOver");
 
 	}
 
