@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ControlPlayer : MonoBehaviour
 {
-
+    public float posMinIzq;
+    public float posMinDer;
     public float speed = 15, jumpVelocity = 40;
     public LayerMask playerMask;
     public bool canMoveInAir = true;
@@ -121,6 +122,18 @@ public class ControlPlayer : MonoBehaviour
             }
 
         }
+
+        if (transform.position.x <= posMinIzq)
+        {
+            Debug.Log("Aquí debías parar");
+        }
+
+        if (transform.position.x >= posMinDer)
+        {
+            Debug.Log("Aquí debías parar");
+        }
+
+
         //isGrounded = Physics2D.Linecast (myTrans.position, tagGround.position, playerMask);
         isGrounded = Physics2D.OverlapCircle(compSuelo.position, comprobadorRadio, mascaraSuelo);
 
@@ -163,7 +176,7 @@ public class ControlPlayer : MonoBehaviour
     private void MobileDisparo()
     {
         //if (Input.GetKeyDown(KeyCode.F) || Input.GetButton(""))
-            BulletAttack();
+        BulletAttack();
     }
 
     //if(Input.GetButtonDown("CambiarArma"))}
@@ -207,24 +220,43 @@ public class ControlPlayer : MonoBehaviour
         }
     }
 
+    public void moveDer()
+    {
+        transform.Translate(Vector2.right * 4f * Time.deltaTime);
+        transform.eulerAngles = new Vector2(0, 0);
+        lado = "derecha";
+    }
+
+    public void moveIzq()
+    {
+        transform.Translate(Vector2.right * 4f * Time.deltaTime);
+        transform.eulerAngles = new Vector2(0, 180);
+        lado = "izquierda";
+    }
+
     public void Move(float horizontalInput)
     {
         if (Input.GetKey(KeyCode.RightArrow) || horizontalInput == 1)
         {
             if (!canMoveInAir && !isGrounded)
                 return;
-            transform.Translate(Vector2.right * 4f * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0, 0);
-            lado = "derecha";
+            if (!(transform.position.x >= posMinDer))
+            {
+                moveDer();
+            }
+
+
         }
 
         if (Input.GetKey(KeyCode.LeftArrow) || horizontalInput == -1)
         {
             if (!canMoveInAir && !isGrounded)
                 return;
-            transform.Translate(Vector2.right * 4f * Time.deltaTime);
-            transform.eulerAngles = new Vector2(0, 180);
-            lado = "izquierda";
+            if (!(transform.position.x <= posMinIzq))
+            {
+                moveIzq();
+            }
+
         }
     }
     //public void Move(float horizonalInput)
@@ -350,7 +382,7 @@ public class ControlPlayer : MonoBehaviour
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 900);
                 Disparo.Play();
             }
-            else if(lado.Equals("izquierda"))
+            else if (lado.Equals("izquierda"))
             {
                 GameObject bPrefab = Instantiate(bullet1, transform.position, Quaternion.identity) as GameObject;
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 900);
@@ -368,7 +400,7 @@ public class ControlPlayer : MonoBehaviour
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.right * 900);
                 Disparo.Play();
             }
-            else if(lado.Equals("izquierda"))
+            else if (lado.Equals("izquierda"))
             {
                 GameObject bPrefab = Instantiate(bullet2, transform.position, Quaternion.identity) as GameObject;
                 bPrefab.GetComponent<Rigidbody2D>().AddForce(Vector2.left * 900);

@@ -1630,6 +1630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a631d76ab66e52f4aa09db52b98abeb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  posMinIzq: -216
+  posMinDer: 140
   speed: 15
   jumpVelocity: 40
   playerMask:

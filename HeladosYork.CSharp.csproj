@@ -110,6 +110,7 @@
     <Compile Include="Assets\Scripts\VoladorStates\IVoladorState.cs" />
     <Compile Include="Assets\Scripts\VoladorStates\IdleState.cs" />
     <Compile Include="Assets\Scripts\VoladorVista.cs" />
+    <Compile Include="Assets\Scripts\prueba.cs" />
     <Compile Include="Assets\attack_ovni.cs" />
     <Compile Include="Assets\jump_loyola.cs" />
     <Compile Include="Assets\pajaroIA.cs" />
