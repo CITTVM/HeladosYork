@@ -10,7 +10,8 @@ public class ControlMobile  : MonoBehaviour {
 
 
 	Destroy (this.gameObject);
-
+        //comnentarocasconas
+        
 	}
 	#endif
 
