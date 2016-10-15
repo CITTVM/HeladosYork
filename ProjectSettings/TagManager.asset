@@ -17,6 +17,7 @@ TagManager:
   - Hitbox
   - SpawnPoint
   - Boss
+  - SoilBoss
   layers:
   - Default
   - TransparentFX

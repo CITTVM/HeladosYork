@@ -72,7 +72,7 @@ public class BossIA : MonoBehaviour
 
         //Asigno a DistanciaMaxima el punto más largo de la plataforma y 
         //a DistanciaMinima el principio de la plataforma
-        if (col.gameObject.tag == "Soil")
+        if (col.gameObject.tag == "SoilBoss")
         {
             ExtraerDistanciaPlataforma(col);
         }

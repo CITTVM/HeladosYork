@@ -45,16 +45,15 @@ public class SettingSpawnPointLocation : MonoBehaviour {
         {
             if (Random.Range(0f,1f) >= 0.5f)
             {
-                Instantiate(enemigo3, new Vector3(vectores[indicador].x, vectores[indicador].y + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
-                
+				Instantiate(enemigo3, new Vector3(vectores[indicador].x, vectores[indicador].y + 2.8f + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
             }
             else if (Random.Range(0f,1f) >= 0.5f)
             {
-                Instantiate(enemigo2, new Vector3(vectores[indicador].x, vectores[indicador].y + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
+				Instantiate(enemigo2, new Vector3(vectores[indicador].x, vectores[indicador].y + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
             }
             else
             {
-                Instantiate(enemigo1, new Vector3(vectores[indicador].x, vectores[indicador].y + 7.5f + anchoSpawns[indicador], vectores[indicador].z), Quaternion.identity);
+				Instantiate(enemigo1, new Vector3(vectores[indicador].x, vectores[indicador].y + 7.5f + anchoSpawns[indicador], (float)(vectores[indicador].z - 1.0f) ), Quaternion.identity);
             }
         }
     }
